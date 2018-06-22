@@ -1,0 +1,25 @@
+nav {
+    height: 8vh;
+    background-color: white;
+    padding-left: 2.5rem;
+    padding-right: 10vw !important;
+}
+
+a.navbar-brand {
+    color: black;
+}
+
+a.nav-link {
+    color: rgb(112, 112, 112);
+    border-radius: .25rem;
+    transition: 0.5s;
+}
+
+a.nav-link:hover {
+    background-color: rgba(172, 172, 172, 0.2); 
+}
+
+.navactive {
+    color: black !important;
+    background-color: rgba(172, 172, 172, 0.287); 
+}

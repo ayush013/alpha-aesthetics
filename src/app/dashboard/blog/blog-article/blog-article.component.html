@@ -1,0 +1,24 @@
+<div class="adjustment">
+    <div class="card card-cascade narrower">
+
+    <!-- Card image -->
+    <div class="view view-cascade overlay waves-effect waves-light">
+      <img class="card-img-top" [src]="blogObj.image" alt="Card image">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+  
+    <!-- Card content -->
+    <div class="card-body card-body-cascade">
+  
+      <!-- Label -->
+      <h5 class="cyan-text pb-2 pt-1"><i class="fa" [ngClass]="blogObj.icon"></i> {{blogObj.category}}</h5>
+      <!-- Title -->
+      <h4 class="card-title">{{blogObj.title}}</h4>
+      <!-- Text -->
+      <p class="card-text">{{blogObj.article}}</p>  
+    </div>
+  
+  </div>
+</div>
