@@ -1,0 +1,98 @@
+.adjustment {
+    padding: 5vh 10vw;
+}
+
+.card.card-cascade.narrower .view.view-cascade {
+    margin-left: 37% !important;
+    margin-right: 37% !important;
+    margin-top: -7rem !important;
+}
+
+.card.card-cascade.narrower {
+    margin-top: 6rem !important;
+}
+
+.card-body {
+    margin-left: 9% !important;
+    margin-right: 9% !important;
+}
+
+div.view {
+    border-radius: 50% !important; 
+}
+
+.weightlabel {
+    margin: 1.5rem 0;
+}
+
+.dropdown {
+    position: relative;
+    width: 100%;
+    background: white;
+    display: block;
+    margin: 0 auto;
+    .selected {
+        display: block;
+        padding: 1rem;
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        border-bottom: 1px solid #bdbdbd;
+        i {
+            position: absolute;
+            right: 0.5rem;
+        }
+        &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+        }
+    }
+    .dropdown-list {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        max-height: 0;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transform: translateY(0%);
+        transition: all 0.3s cubic-bezier(.17,.67,0,1);
+        li {
+            padding: 1rem;
+            display: block;
+            cursor: pointer;
+            transition: all 200ms ease;
+            z-index: 1000;
+            &:hover, &.selectactive {
+                background: rgba(#3F51B5, 0.1);
+            }
+        }
+        &.selectactive {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0%);
+            max-height: 260px;
+            overflow: auto;
+        }
+    }
+}
+
+input[type=radio] {
+    display:none; 
+}
+
+#weight:focus + label, #height:focus + label {
+    transform: translateY(-120%);
+    font-size: 0.8rem;
+}
+
+ul::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ul::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.349); 
+  }

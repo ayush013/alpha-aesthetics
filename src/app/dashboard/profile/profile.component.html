@@ -1,3 +1,66 @@
-<p>
-  profile works!
-</p>
+<div class="adjustment">
+  <div class="card card-cascade narrower">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay waves-effect waves-light">
+    <img class="card-img-top" [src]="googledata.imgsrc" alt="Card image">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade">
+
+    <!-- Title -->
+    <h4 class="card-title text-center">Welcome {{googledata.fname}}</h4>
+    <!-- Text -->
+    <form [formGroup]="ProfileFormData">
+      <div class="row">
+          <div class="md-form col-8">
+            <i class="fa fa-balance-scale prefix grey-text"></i>
+            <input type="number" id="weight" class="form-control" required formControlName="weight" >
+            <label for="weight">Enter your bodyweight</label>
+        </div>
+        <div class="btn-group col-3" data-toggle="buttons">
+          <label class="btn btn-default form-check-label weightlabel" *ngFor="let unit of weightunit; let i = index" (click)="ConvertWeight(i+1)" [ngClass]="{'active': ProfileFormData.get('weightunit').value == i+1 }"> 
+              <input class="form-check-input" type="radio" name="weightunit" formControlName="weightunit" [value]="i+1" required> {{unit}}
+          </label>
+        </div>
+        <div class="col"></div>
+      </div>
+    <div class="md-form">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input type="email" id="email" class="form-control" formControlName="email">
+    </div>
+    <div class="md-form">
+        <div class="dropdown" id="goal">
+            <input type="number" hidden formControlName="goal" required>
+            <p class="selected"><span>Select Your Goal</span> <i class="fa fa-caret-down"></i></p>
+            <ul class="dropdown-list">
+                <li *ngFor="let goal of goals; let i=index" (click)="GoalValue(i+1)">{{goal}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-4" style="padding-top: 1em;">Your Experience Level</div>
+      <div class="btn-group col-8" data-toggle="buttons">
+          <label class="btn btn-default form-check-label"  *ngFor="let exp of experience; let i = index" [ngClass]="{'active': ProfileFormData.get('experience').value == i+1 }">
+              <input class="form-check-input" type="radio" name="experience" formControlName="experience" [value]="i+1" required> {{exp}}
+          </label>
+      </div>
+    </div>
+    <div class="md-form ">
+        <i class="fa fa-user prefix grey-text"></i>
+        <input type="number" id="height" class="form-control" formControlName="height" required>
+        <label for="height">Enter your height in centimetres</label>
+    </div>
+
+    <div class="text-center mt-4">
+      <button class="btn gradient1" [disabled]="!ProfileFormData.valid">Save Details</button>
+    </div>
+    </form>
+  </div>
+
+</div>
+</div>

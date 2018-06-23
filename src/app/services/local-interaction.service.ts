@@ -44,8 +44,15 @@ workoutarray = [
   googledata = {
     fname: 'Ayush',
     lname: 'Singh',
-    dpsrc: '../../assets/images/dp.jpg',
+    imgsrc: '../../assets/images/dp.jpg',
     email: 'ayush.singh.xda@gmail.com'
   };
+
+  private profileObject = new BehaviorSubject(this.profiledata);
+  ProfileObservable = this.profileObject.asObservable();
+
+  private googleObject = new BehaviorSubject(this.googledata);
+  GoogleObservable = this.googleObject.asObservable();
+  
 
 }

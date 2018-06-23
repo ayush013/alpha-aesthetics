@@ -24,6 +24,9 @@ import { WorkoutcardComponent } from './dashboard/workout/workoutcard/workoutcar
 import { WorkoutTableComponent } from './dashboard/workout/workout-table/workout-table.component';
 import { InsightcardComponent } from './dashboard/dhome/insightcard/insightcard.component';
 import { BlogArticleComponent } from './dashboard/blog/blog-article/blog-article.component';
+import { AuthGuard } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -52,9 +55,10 @@ import { BlogArticleComponent } from './dashboard/blog/blog-article/blog-article
   imports: [
     MDBBootstrapModule.forRoot(),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })
