@@ -1,5 +1,5 @@
 <div class="row adjustment">
-    <div class="col-md-4 col-12"><app-workoutcard></app-workoutcard></div>
-    <div class="col-md-4 col-12"><app-workoutcard></app-workoutcard></div>
-    <div class="col-md-4 col-12"><app-workoutcard></app-workoutcard></div>
-  </div>
+    <div class="col-md-4 col-12" *ngFor="let workoutdata of workoutarray">
+      <app-workoutcard [workoutObj]="workoutdata"></app-workoutcard>
+    </div>
+</div>

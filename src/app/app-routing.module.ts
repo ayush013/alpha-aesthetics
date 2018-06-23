@@ -28,7 +28,7 @@ const appRoutes: Routes = [
     { path: 'calculator', component: CalorieCalcComponent, data: { title: 'Calorie Calculator'} },
     { path: 'mealplan', component: MealPlanComponent, data: { title: 'Meal Plan Generator'} },
     { path: 'workout', component: WorkoutComponent, data: { title: 'Free Workout Plans'} },
-    { path: 'workout/:path', component: WorkoutComponent, data: { title: 'Free Workout Plans'} },
+    { path: 'workout/:path', component: WorkoutTableComponent, data: { title: 'Free Workout Plans'} },
     { path: 'blog', component: BlogComponent, data: { title: 'Blog'} },
     { path: 'blog/:path', component: BlogArticleComponent, data: { title: 'Blog'} },
     { path: 'myfitnesspal', component: MyfitnesspalComponent, data: { title: 'Myfitnesspal Insights'} },

@@ -23,3 +23,15 @@ a.nav-link:hover {
     color: black !important;
     background-color: rgba(172, 172, 172, 0.287); 
 }
+
+a.nav-link:hover i.fa-facebook {
+    color: rgb(47, 47, 194);
+}
+
+a.nav-link:hover i.fa-instagram {
+    color: rgb(204, 0, 126);
+}
+
+a.nav-link:hover i.fa-youtube {
+    color: rgb(223, 33, 33);
+}

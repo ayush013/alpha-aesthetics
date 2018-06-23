@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { LocalInteractionService } from '../../services/local-interaction.service';
 
 @Component({
   selector: 'app-workout',
@@ -9,10 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WorkoutComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private titleService: Title) {}
+  workoutarray: any;
+
+  constructor(private route: ActivatedRoute, private titleService: Title, private LocalInteractionService: LocalInteractionService) {}
 
   ngOnInit() {
-    this.titleService.setTitle(this.route.snapshot.data['title'])
+    this.titleService.setTitle(this.route.snapshot.data['title']);
+    this.LocalInteractionService.WorkoutObservable
+    .subscribe(message => {this.workoutarray = message;
+      console.log(this.workoutarray);
+    });
   }
 
 }

@@ -16,7 +16,7 @@ export class BlogComponent implements OnInit {
 
   ngOnInit() {
       this.titleService.setTitle(this.route.snapshot.data['title']);
-      this.LocalInteractionService.ArrayObservable
+      this.LocalInteractionService.BlogObservable
         .subscribe(message => {this.blogarray = message;
           console.log(this.blogarray);
         });
