@@ -26,9 +26,15 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   {name:'Highly Active', desc:'Spend most of the day doing heavy physical activity / Intense exercise daily'},
   ];
   weightunit = ['Kgs', 'Lbs'];
+  heightunit = ['cms', 'ft'];
   goals = ['Lose 1 kg per week','Lose 0.5 kg per week','Lose 0.25 kg per week','Maintain Current Weight','Gain 0.25 kg per week','Gain 0.5 kg per week'];
 
   ProfileFormData: FormGroup;
+
+  SaveProfile() {
+    console.log(this.ProfileFormData.value);
+    this.LocalInteractionService.SetProfile(this.ProfileFormData.value);
+  }
 
   ConvertWeight(unit) {
     console.log(this.ProfileFormData.value.weightunit);
@@ -49,6 +55,26 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     }
   }
 
+  ConvertHeight(unit) {
+    console.log(this.ProfileFormData.value.weightunit);
+    if(this.ProfileFormData.get('heightunit').value === unit) {
+      console.log('nothing is changed');
+    }
+    else if (unit==2 && this.ProfileFormData.value.weightunit == 1) {
+      this.ProfileFormData.removeControl('heightcm');
+      this.ProfileFormData.addControl('heightinch', new FormControl(null));
+      this.ProfileFormData.addControl('heightfeet', new FormControl(null));
+      this.ProfileFormData.patchValue({heightunit: 2});
+    }
+    else {
+      // this.ProfileFormData.patchValue({weight: Math.round(this.ProfileFormData.get('weight').value*100/2.2046226218)/100 });
+      this.ProfileFormData.removeControl('heightfeet');
+      this.ProfileFormData.removeControl('heightinch');
+      this.ProfileFormData.addControl('heightcm', new FormControl(null));
+      this.ProfileFormData.patchValue({heightunit: 1});
+    }
+  }
+
   GoalValue(goal) {
     this.ProfileFormData.patchValue({goal: goal});
   }
@@ -65,10 +91,12 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       'weight': new FormControl(null),
       'weightunit': new FormControl(1),
       'email': new FormControl({value: this.googledata.email, disabled: true}),
+      'gender': new FormControl({value: this.googledata.gender, disabled: true}),
       'goal': new FormControl(null),
       'experience': new FormControl(null),
       'lifestyle': new FormControl(null),
-      'height': new FormControl(null),
+      'heightunit': new FormControl(1),
+      'heightcm': new FormControl(null),
     });
 
     console.log(this.ProfileFormData);
@@ -97,7 +125,8 @@ export class ProfileComponent implements OnInit, AfterViewInit {
                 selected.children('span').html($(this).html());
             })
         }
-    })
+    });
+
 
   }
 

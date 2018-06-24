@@ -1,3 +1,49 @@
-<p>
-  caloriearticle works!
-</p>
+<div class="adjustment">
+  <div class="card card-cascade narrower">
+
+  <!-- Card image -->
+  <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+    <img class="card-img-top" [src]="calObj.image" alt="Card image">
+    <a>
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body card-body-cascade">
+
+    <!-- Title -->
+    <h1 class="card-title">{{calObj.title}}</h1>
+    
+      <!-- <div class="card-text" *ngFor="let day of calObj.cal; let i=index">
+        <h2>Day {{i+1}} - </h2>
+        <div class="table-responsive">
+      <table class="table table-hover table-striped" >
+          <thead class="text-white" [ngClass]="'gradient'+(i+1)">
+              <tr>
+                  <th>S. No.</th>
+                  <th>Exercise</th>
+                  <th>No. of Sets</th>
+                  <th>No. of Reps</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let exercises of day; let j=index">
+                    <td *ngIf="exercises.exercise === 'Rest Day'; else work" colspan="4" class="text-center">{{exercises.exercise}}</td>
+                <ng-template #work>
+                  <td scope="row">{{j+1}}</td>
+                  <td>{{exercises.exercise}}</td>
+                  <td>{{exercises.sets}}</td>
+                  <td>{{exercises.reps}}</td>
+                </ng-template>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+
+    </div> -->
+
+  </div>
+
+</div>
+</div>

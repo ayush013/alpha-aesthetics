@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-caloriearticle',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaloriearticleComponent implements OnInit {
 
-  constructor() { }
+  calObj;
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.route.snapshot.queryParams.param);
+    this.calObj = JSON.parse(this.route.snapshot.queryParams.param);
+    console.log(this.calObj);
+
   }
 
 }

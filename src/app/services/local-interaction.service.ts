@@ -28,9 +28,9 @@ workoutarray = [
 ];
 
 calarray = [
-  { route: 'bulk', title: 'I want to Gain Muscle', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'},
-  { route: 'cut', title: 'I want to Lose Fat', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'},
-  { route: 'recomp', title: 'I want to Maintain Weight', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'}
+  { route: 'bulk', title: 'Gain Weight', features: ['Caloric Surplus','Gain Muscle and Strength','Suitable for Lean Bulking'], image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLpqkEvNqMHwLfBfU6Q3iPfGCUfvvPhZ1yxkCYQ6n_VUWJ1Ar'},
+  { route: 'cut', title: 'Lose Weight', features: ['Caloric Deficit','Lose Fat and Get Shredded','Maintain Muscle and Strength'], image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLpqkEvNqMHwLfBfU6Q3iPfGCUfvvPhZ1yxkCYQ6n_VUWJ1Ar'},
+  { route: 'recomp', title: 'Maintain Weight', features: ['Maintaince Calories','Lose Fat and Build Muscle slowly','Body Recomposition'], image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLpqkEvNqMHwLfBfU6Q3iPfGCUfvvPhZ1yxkCYQ6n_VUWJ1Ar'}
 ];
 
   private blogArray = new BehaviorSubject(this.blogarray);
@@ -45,6 +45,7 @@ calarray = [
   googledata = {
     fname: 'Ayush',
     lname: 'Singh',
+    gender: 'male',
     imgsrc: '../../assets/images/dp.jpg',
     email: 'ayush.singh.xda@gmail.com'
   };
@@ -52,5 +53,10 @@ calarray = [
   private googleObject = new BehaviorSubject(this.googledata);
   GoogleObservable = this.googleObject.asObservable();
   
+  profiledata: Object;
+
+  SetProfile(profiledata) {
+    this.profiledata = profiledata;
+  }
 
 }

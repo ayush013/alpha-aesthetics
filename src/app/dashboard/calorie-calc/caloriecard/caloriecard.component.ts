@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-caloriecard',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CaloriecardComponent implements OnInit {
 
+  @Input() calObj;
+
+  calorieTableParam;
+
   constructor() { }
 
   ngOnInit() {
+    this.calorieTableParam = JSON.stringify(this.calObj);
+    console.log(this.calorieTableParam);
   }
 
 }
