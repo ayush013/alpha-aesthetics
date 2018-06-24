@@ -1,3 +1,5 @@
-<p>
-  calorie-calc works!
-</p>
+<div class="row adjustment">
+    <div class="col-md-4 col-12" *ngFor="let caldata of calarray">
+      <app-caloriecard [calObj]="caldata"></app-caloriecard>
+    </div>
+</div>

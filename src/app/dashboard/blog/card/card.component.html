@@ -1,7 +1,7 @@
 <div class="card card-cascade narrower">
 
   <!-- Card image -->
-  <div class="view view-cascade overlay waves-effect waves-light" >
+  <div class="view view-cascade overlay waves-light" mdbWavesEffect>
     <img class="card-img-top" [src]="blogObj.image" alt="Card image">
     <a>
       <div class="mask rgba-white-slight"></div>
@@ -18,7 +18,7 @@
     <!-- Text -->
     <p class="card-text">{{blogObj.text}}</p>
     <!-- Button -->
-    <a class="btn waves-effect" [routerLink]="blogObj.route" [queryParams]="blogObj" [skipLocationChange]="true">Read More <i class="fa fa-angle-double-right"></i></a>
+    <a class="btn" mdbWavesEffect [routerLink]="blogObj.route" [queryParams]="blogObj" [skipLocationChange]="true">Read More <i class="fa fa-angle-double-right"></i></a>
 
   </div>
 

@@ -14,11 +14,17 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   constructor(private route: ActivatedRoute, private titleService: Title, private LocalInteractionService: LocalInteractionService) {}
 
-  profiledata;
   googledata;
-  exp;
 
-  experience = ['Beginner', 'Intermediate', 'Advanced'];
+  experience = [{name:'Beginner', desc:'Little to no experience in gym. Just started your fitness journey. 😊'},
+  {name:'Intermediate', desc:'Been working out consistently for 1-3 years. Intermediate knowledge about health and fitness 💪'},
+  {name:'Advanced', desc:'Been working out consistently for 3+ years. You know your shit! 🏋'}
+  ];
+  lifestyle = [{name:'Sedentary', desc:'Spend most of the day sitting (E.g. Desk Job, Developer 🤓)'},
+  {name:'Lightly Active', desc:'Spend good part of the day on your feet (E.g. College Student )/ Exercise 2-3 times a week'},
+  {name:'Active', desc:'Spend good part of the day doing physical activity / Exercise 5-6 times a week'},
+  {name:'Highly Active', desc:'Spend most of the day doing heavy physical activity / Intense exercise daily'},
+  ];
   weightunit = ['Kgs', 'Lbs'];
   goals = ['Lose 1 kg per week','Lose 0.5 kg per week','Lose 0.25 kg per week','Maintain Current Weight','Gain 0.25 kg per week','Gain 0.5 kg per week'];
 
@@ -26,24 +32,30 @@ export class ProfileComponent implements OnInit, AfterViewInit {
 
   ConvertWeight(unit) {
     console.log(this.ProfileFormData.value.weightunit);
-    if(this.ProfileFormData.value.weightunit == unit) {
+    if(this.ProfileFormData.get('weightunit').value === unit) {
       console.log('nothing is changed');
     }
     else if (unit==2 && this.ProfileFormData.value.weightunit == 1) {
-      this.ProfileFormData.value.weight *= 2.2046226218; 
-    console.log(this.ProfileFormData.value.weight)
+      this.ProfileFormData.patchValue({weight: Math.round(220.46226218*this.ProfileFormData.get('weight').value)/100 });
+      this.ProfileFormData.patchValue({weightunit: 2});
+      console.log(this.ProfileFormData.get('weight').value)
+      console.log(this.ProfileFormData.get('weightunit').value)
+    }
+    else {
+      this.ProfileFormData.patchValue({weight: Math.round(this.ProfileFormData.get('weight').value*100/2.2046226218)/100 });
+      this.ProfileFormData.patchValue({weightunit: 1});
+      console.log(this.ProfileFormData.get('weight').value)
+      console.log(this.ProfileFormData.get('weightunit').value)
     }
   }
 
   GoalValue(goal) {
-    this.ProfileFormData.value.goal = goal;
+    this.ProfileFormData.patchValue({goal: goal});
   }
 
   ngOnInit() {
     this.titleService.setTitle(this.route.snapshot.data['title'])
-    this.LocalInteractionService.ProfileObservable
-    .subscribe(message => {this.profiledata = message;
-    });
+
 
     this.LocalInteractionService.GoogleObservable
     .subscribe(message => {this.googledata = message;
@@ -55,6 +67,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       'email': new FormControl({value: this.googledata.email, disabled: true}),
       'goal': new FormControl(null),
       'experience': new FormControl(null),
+      'lifestyle': new FormControl(null),
       'height': new FormControl(null),
     });
 

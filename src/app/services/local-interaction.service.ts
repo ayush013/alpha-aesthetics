@@ -27,19 +27,20 @@ workoutarray = [
   { route: 'fullbody', workout: [[{exercise:'Squat', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}],[{exercise:'OHP', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}]], title: 'Full Body Workout', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'}
 ];
 
+calarray = [
+  { route: 'bulk', title: 'I want to Gain Muscle', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'},
+  { route: 'cut', title: 'I want to Lose Fat', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'},
+  { route: 'recomp', title: 'I want to Maintain Weight', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'}
+];
+
   private blogArray = new BehaviorSubject(this.blogarray);
   BlogObservable = this.blogArray.asObservable();
 
   private workoutArray = new BehaviorSubject(this.workoutarray);
   WorkoutObservable = this.workoutArray.asObservable();
 
-  profiledata = {
-    weight: 65, 
-    weightunit: 'kg',
-    goal: 3,
-    height: 170,
-    heightunit: 'cm',
-  };
+  private calArray = new BehaviorSubject(this.calarray);
+  CalObservable = this.calArray.asObservable();
 
   googledata = {
     fname: 'Ayush',
@@ -47,9 +48,6 @@ workoutarray = [
     imgsrc: '../../assets/images/dp.jpg',
     email: 'ayush.singh.xda@gmail.com'
   };
-
-  private profileObject = new BehaviorSubject(this.profiledata);
-  ProfileObservable = this.profileObject.asObservable();
 
   private googleObject = new BehaviorSubject(this.googledata);
   GoogleObservable = this.googleObject.asObservable();

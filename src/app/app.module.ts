@@ -27,6 +27,8 @@ import { BlogArticleComponent } from './dashboard/blog/blog-article/blog-article
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CaloriecardComponent } from './dashboard/calorie-calc/caloriecard/caloriecard.component';
+import { CaloriearticleComponent } from './dashboard/calorie-calc/caloriearticle/caloriearticle.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     WorkoutTableComponent,
     InsightcardComponent,
     BlogArticleComponent,
+    CaloriecardComponent,
+    CaloriearticleComponent,
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

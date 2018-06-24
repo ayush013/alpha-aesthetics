@@ -2,7 +2,7 @@
 
     <!-- Card image -->
     <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-        <img class="card-img-top" [src]="workoutObj.image" alt="Card image">
+        <img class="card-img-top" [src]="calObj.image" alt="Card image">
         <a>
         <div class="mask rgba-white-slight"></div>
       </a>
@@ -12,13 +12,13 @@
     <div class="card-body card-body-cascade">
   
       <!-- Title -->
-      <h4 class="card-title">{{workoutObj.title}}</h4>
+      <h4 class="card-title">{{calObj.title}}</h4>
       <!-- Text -->
-      <ul class="card-text" *ngFor="let feature of workoutObj.features">
+      <ul class="card-text" *ngFor="let feature of calObj.features">
           <li>{{feature}}</li>
       </ul>
       <!-- Button -->
-      <a class="btn btn-elegant waves-light" mdbWavesEffect [routerLink]="workoutObj.route" [queryParams]="{param: workoutTableParam}" [skipLocationChange]="true">Use Routine <i class="fa fa-angle-double-right"></i>
+      <a class="btn btn-elegant waves-light" mdbWavesEffect [routerLink]="calObj.route" [queryParams]="{param: calTableParam}" [skipLocationChange]="true">Use Routine <i class="fa fa-angle-double-right"></i>
       </a>
   
     </div>
