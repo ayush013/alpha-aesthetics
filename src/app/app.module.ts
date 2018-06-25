@@ -29,6 +29,9 @@ import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CaloriecardComponent } from './dashboard/calorie-calc/caloriecard/caloriecard.component';
 import { CaloriearticleComponent } from './dashboard/calorie-calc/caloriearticle/caloriearticle.component';
+import { LocalInteractionService } from './services/local-interaction.service';
+import { CalorieCalculatorService } from './services/calorie-calculator.service';
+import { ServerInteractionService } from './services/server-interaction.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,7 @@ import { CaloriearticleComponent } from './dashboard/calorie-calc/caloriearticle
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, LocalInteractionService, CalorieCalculatorService, ServerInteractionService],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

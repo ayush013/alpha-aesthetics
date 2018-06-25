@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { LocalInteractionService } from '../../services/local-interaction.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import * as $ from 'jquery';
 
 @Component({
@@ -62,15 +62,15 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     }
     else if (unit==2 && this.ProfileFormData.value.weightunit == 1) {
       this.ProfileFormData.removeControl('heightcm');
-      this.ProfileFormData.addControl('heightinch', new FormControl(null));
-      this.ProfileFormData.addControl('heightfeet', new FormControl(null));
+      this.ProfileFormData.addControl('heightinch', new FormControl(null, Validators.required));
+      this.ProfileFormData.addControl('heightfeet', new FormControl(null, Validators.required));
       this.ProfileFormData.patchValue({heightunit: 2});
     }
     else {
       // this.ProfileFormData.patchValue({weight: Math.round(this.ProfileFormData.get('weight').value*100/2.2046226218)/100 });
       this.ProfileFormData.removeControl('heightfeet');
       this.ProfileFormData.removeControl('heightinch');
-      this.ProfileFormData.addControl('heightcm', new FormControl(null));
+      this.ProfileFormData.addControl('heightcm', new FormControl(null, Validators.required));
       this.ProfileFormData.patchValue({heightunit: 1});
     }
   }
@@ -88,16 +88,17 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     });
 
     this.ProfileFormData = new FormGroup({
-      'weight': new FormControl(null),
+      'weight': new FormControl(null, [Validators.required, Validators.max(150), Validators.min(20)]),
       'weightunit': new FormControl(1),
-      'email': new FormControl({value: this.googledata.email, disabled: true}),
+      'email': new FormControl({value: this.googledata.email, disabled: true}, [Validators.required, Validators.email]),
       'gender': new FormControl({value: this.googledata.gender, disabled: true}),
-      'goal': new FormControl(null),
-      'experience': new FormControl(null),
-      'lifestyle': new FormControl(null),
+      'goal': new FormControl(null, Validators.required),
+      'experience': new FormControl(null, Validators.required),
+      'lifestyle': new FormControl(null, Validators.required),
       'heightunit': new FormControl(1),
-      'heightcm': new FormControl(null),
+      'heightcm': new FormControl(null, Validators.required),
     });
+
 
     console.log(this.ProfileFormData);
 

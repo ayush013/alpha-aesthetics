@@ -93,7 +93,7 @@ input[type=radio] {
     display:none; 
 }
 
-#weight:focus + label, #height:focus + label, #weight.ng-valid + label, #height.ng-valid +label, #email + label, #gender + label {
+#weight:focus + label, #height:focus + label, #weight.ng-valid + label, #weight.ng-invalid.ng-touched + label, #height.ng-valid +label, #email + label, #gender + label {
     transform: translateY(-120%);
     font-size: 0.8rem;
 }

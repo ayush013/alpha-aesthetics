@@ -1,9 +1,19 @@
-import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+export interface ProfileData {
+  weight: number;
+  weightunit: number;
+  email: string;
+  gender: string;
+  goal: number;
+  experience: number;
+  lifestyle: number;
+  heightcm?: number;
+  heightunit: number;
+  heightfeet?: number;
+  heightinch?: number;
+}
+
 export class LocalInteractionService {
 
   constructor() { }
@@ -53,10 +63,18 @@ calarray = [
   private googleObject = new BehaviorSubject(this.googledata);
   GoogleObservable = this.googleObject.asObservable();
   
-  profiledata: Object;
+  profiledata;
 
-  SetProfile(profiledata) {
-    this.profiledata = profiledata;
+  SetProfile(data) {
+    this.profiledata = data;
+    console.log(this.profiledata)
+  }
+
+  GetProfileData() {
+    return this.profiledata;
+  }
+  GetGoogleData() {
+    return this.googledata;
   }
 
 }

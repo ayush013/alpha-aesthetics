@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CalorieCalculatorService } from '../../../services/calorie-calculator.service';
 
 @Component({
   selector: 'app-caloriecard',
@@ -11,11 +12,15 @@ export class CaloriecardComponent implements OnInit {
 
   calorieTableParam;
 
-  constructor() { }
+  constructor(private cal: CalorieCalculatorService) { }
 
   ngOnInit() {
     this.calorieTableParam = JSON.stringify(this.calObj);
     console.log(this.calorieTableParam);
+  }
+
+  test() {
+    this.cal.FatLoss();
   }
 
 }
