@@ -3,8 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 export interface ProfileData {
   weight: number;
   weightunit: number;
-  email: string;
-  gender: string;
+  age: number;
   goal: number;
   experience: number;
   lifestyle: number;
@@ -63,7 +62,16 @@ calarray = [
   private googleObject = new BehaviorSubject(this.googledata);
   GoogleObservable = this.googleObject.asObservable();
   
-  profiledata;
+  profiledata: ProfileData = {
+    age: 21,
+    experience : 2,
+    goal : 2,
+    heightcm : 172,
+    heightunit : 1,
+    lifestyle : 2, 
+    weight : 70, 
+    weightunit : 1
+  };
 
   SetProfile(data) {
     this.profiledata = data;

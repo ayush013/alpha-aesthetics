@@ -88,8 +88,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     });
 
     this.ProfileFormData = new FormGroup({
-      'weight': new FormControl(null, [Validators.required, Validators.max(150), Validators.min(20)]),
+      'weight': new FormControl(null, [Validators.required, Validators.min(20)]),
       'weightunit': new FormControl(1),
+      'age': new FormControl(null, [Validators.required, Validators.max(100), Validators.min(15)]),
       'email': new FormControl({value: this.googledata.email, disabled: true}, [Validators.required, Validators.email]),
       'gender': new FormControl({value: this.googledata.gender, disabled: true}),
       'goal': new FormControl(null, Validators.required),

@@ -93,7 +93,7 @@ input[type=radio] {
     display:none; 
 }
 
-#weight:focus + label, #height:focus + label, #weight.ng-valid + label, #weight.ng-invalid.ng-touched + label, #height.ng-valid +label, #email + label, #gender + label {
+#weight:focus + label, #age:focus + label, #height:focus + label, #weight.ng-valid + label, #weight.ng-invalid.ng-touched + label, #age.ng-invalid.ng-touched + label, #age.ng-valid +label, #height.ng-valid +label, #email + label, #gender + label {
     transform: translateY(-120%);
     font-size: 0.8rem;
 }
@@ -118,11 +118,11 @@ button.active, label.active,  .btn-default:not([disabled]):not(.disabled).active
     background: linear-gradient(40deg, #2ba5d1, #2838a0) !important;
 }
 
-#weight.ng-valid, #height.ng-valid, #email.ng-untouched, #gender.ng-untouched, #goalinput.ng-valid + p.selected {
+#weight.ng-valid, #age.ng-valid, #height.ng-valid, #email.ng-untouched, #gender.ng-untouched, #goalinput.ng-valid + p.selected {
     border-bottom: 2px solid #13b649;
 }
 
-#height.ng-valid + label, #weight.ng-valid + label, .icon-success, #email.ng-untouched + label, #gender.ng-untouched + label {
+#height.ng-valid + label, #age.ng-valid + label, #weight.ng-valid + label, .icon-success, #email.ng-untouched + label, #gender.ng-untouched + label {
     color: #13b649 !important;
 }
 .md-form .prefix {

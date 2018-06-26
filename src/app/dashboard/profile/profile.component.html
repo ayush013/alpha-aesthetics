@@ -30,6 +30,11 @@
           </button>
         </div>
       </div>
+      <div class="md-form">
+        <i class="fa fa-balance-scale prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('age').valid, 'icon-invalid': (ProfileFormData.get('age').invalid && ProfileFormData.get('age').touched) }"></i>
+        <input type="number" id="age" class="form-control"  formControlName="age" >
+        <label for="age">How Young are you?</label>
+      </div>
       <div class="row">
         <div class="md-form col-8">
           <i class="fa fa-envelope prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('email').pristine,  'icon-invalid': ProfileFormData.get('email').dirty }"></i>
