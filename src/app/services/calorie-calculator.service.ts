@@ -59,7 +59,7 @@ MacroGenerator(calories, weight, experience) {
         pmacro: (Math.round(0.7*weight*220.46226218100)/100),
         get pcals() { return (4*this.pmacro) },
         fcals: (calories*0.3),
-        get fmacro() { return (Math.round(this.fcals*100)/900) },
+        get fmacro() { return (Math.round((this.fcals*100)/900)) },
         get ccals() { return (calories-this.pcals-this.fcals) },
         get cmacro() { return (Math.round(this.ccals*100)/400) },
       },
@@ -68,7 +68,7 @@ MacroGenerator(calories, weight, experience) {
         pmacro: (Math.round(0.7*weight*220.46226218100)/100),
         get pcals() { return (4*this.pmacro) },
         fcals: (calories*0.25),
-        get fmacro() { return (Math.round(this.fcals*100)/900) },
+        get fmacro() { return (Math.round((this.fcals*100)/900)) },
         get ccals() { return (calories-this.pcals-this.fcals) },
         get cmacro() { return (Math.round(this.ccals*100)/400) },
       },
@@ -77,7 +77,7 @@ MacroGenerator(calories, weight, experience) {
         pmacro: (Math.round(0.7*weight*220.46226218100)/100),
         get pcals() { return (4*this.pmacro) },
         fcals: (calories*0.2),
-        get fmacro() { return (Math.round(this.fcals*100)/900) },
+        get fmacro() { return (Math.round((this.fcals*100)/900)) },
         get ccals() { return (calories-this.pcals-this.fcals) },
         get cmacro() { return (Math.round(this.ccals*100)/400) },
       }
@@ -90,7 +90,7 @@ MacroGenerator(calories, weight, experience) {
         pmacro: (Math.round(weight*220.46226218100)/100),
         get pcals() { return (4*this.pmacro) },
         fcals: (calories*0.3),
-        get fmacro() { return (Math.round(this.fcals*100)/900) },
+        get fmacro() { return (Math.round((this.fcals*100)/900)) },
         get ccals() { return (calories-this.pcals-this.fcals) },
         get cmacro() { return (Math.round(this.ccals*100)/400) },
       },
@@ -99,7 +99,7 @@ MacroGenerator(calories, weight, experience) {
         pmacro: (Math.round(weight*220.46226218100)/100),
         get pcals() { return (4*this.pmacro) },
         fcals: (calories*0.25),
-        get fmacro() { return (Math.round(this.fcals*100)/900) },
+        get fmacro() { return (Math.round((this.fcals*100)/900)) },
         get ccals() { return (calories-this.pcals-this.fcals) },
         get cmacro() { return (Math.round(this.ccals*100)/400) },
       },
@@ -108,13 +108,75 @@ MacroGenerator(calories, weight, experience) {
         pmacro: (Math.round(weight*220.46226218100)/100),
         get pcals() { return (4*this.pmacro) },
         fcals: (calories*0.2),
-        get fmacro() { return (Math.round(this.fcals*100)/900) },
+        get fmacro() { return (Math.round((this.fcals*100)/900)) },
         get ccals() { return (calories-this.pcals-this.fcals) },
         get cmacro() { return (Math.round(this.ccals*100)/400) },
       }
     ]
 }
 
+}
+
+Cardio(activity, goal) {
+  switch(goal) {
+    case 1: {
+      if(activity == 1 || 2) {
+        this.caloriedata['cardio'] = 4;
+      }
+      else this.caloriedata['cardio'] = 3;
+
+      break;
+    }
+    case 2: {
+      if(activity == 1 || 2) {
+        this.caloriedata['cardio'] = 3;
+      }
+      else this.caloriedata['cardio'] = 2;
+
+      break;
+    }
+    case 3: {
+      if(activity == 1 || 2) {
+        this.caloriedata['cardio'] = 2;
+      }
+      else this.caloriedata['cardio'] = 1;
+
+      break;
+    }
+    case 4: case 5: case 6: {
+      this.caloriedata['cardio'] = 1;
+      break;
+     }
+    default: {console.log('FATAL CARDIO ERROR'); break;}
+
+  }
+}
+
+CommonRoutine() {
+    // ADD USER NAME TO CALORIEDATA OBJECT
+    this.caloriedata['name'] = this.googledata.fname;
+    this.caloriedata['imgsrc'] = this.googledata.imgsrc;
+    this.caloriedata['age'] = this.profiledata.age;
+    this.caloriedata['experience'] = this.profiledata.experience;
+    this.caloriedata['lifestyle'] = this.profiledata.lifestyle;
+
+    // CONVERT HEIGHT INCHES TO CMS
+      if(this.profiledata.heightunit === 2 ) {
+        this.ConvertHeight(this.profiledata.heightfeet, this.profiledata.heightinch);
+      }
+  
+    // CONVERT WEIGHT LBS TO KGS
+    if(this.profiledata.weightunit === 2 ) {
+      this.ConvertWeight(this.profiledata.weight);
+    }
+  
+  
+    // CALCULATE BMR 
+    this.BMR(this.googledata.gender, this.profiledata.weight, this.profiledata.heightcm, this.profiledata.age);
+  
+  
+    // CALCULATE MAINTAINANCE CALS
+      this.MaintainanceCal(this.caloriedata['bmr'], this.profiledata['lifestyle']);  
 }
 
 
@@ -124,29 +186,8 @@ FatLoss() {
   this.profiledata = this.LocalInteractionService.GetProfileData();
   this.googledata = this.LocalInteractionService.GetGoogleData();
 
-
-  // ADD USER NAME TO CALORIEDATA OBJECT
-  this.caloriedata['name'] = this.googledata.fname;
-
-  // CONVERT HEIGHT INCHES TO CMS
-    if(this.profiledata.heightunit === 2 ) {
-      this.ConvertHeight(this.profiledata.heightfeet, this.profiledata.heightinch);
-    }
-
-
-  // CONVERT WEIGHT LBS TO KGS
-  if(this.profiledata.weightunit === 2 ) {
-    this.ConvertWeight(this.profiledata.weight);
-  }
-
-
-  // CALCULATE BMR 
-  this.BMR(this.googledata.gender, this.profiledata.weight, this.profiledata.heightcm, this.profiledata.age);
-
-
-  // CALCULATE MAINTAINANCE CALS
-    this.MaintainanceCal(this.caloriedata['bmr'], this.profiledata['lifestyle']);
-
+  // EXECUTE COMMON MODULE 
+  this.CommonRoutine();
 
   // LOWER LIMIT OF CALS
   this.caloriedata['rockbottom'] =  (Math.round(8*this.profiledata.weight*220.46226218100)/100);
@@ -167,13 +208,70 @@ FatLoss() {
       break;
     }
     case 4: case 5: case 6: { 
-      this.caloriedata['goalerrormsg'] = `According to our database, your current goal is set to ${this.goals[this.profiledata.goal-1]}` } 
+      this.caloriedata['goalerrormsg'] = `According to our database, your current goal is set to ${this.goals[this.profiledata.goal-1]}`;
+        return; } 
     default: {console.log('FATAL FATLOSS CALS ERROR'); break;}
   }
 
   // CALCULATE MACROS FOR FATLOSS BASED ON EXPERIENCE
   this.MacroGenerator(this.caloriedata['fatlosscal'], this.profiledata.weight, this.profiledata.experience);
   console.log(this.caloriedata);
+
+  // CALCULATE CARDIO FOR FATLOSS
+  this.Cardio(this.profiledata.lifestyle, this.profiledata.goal);
+
+}
+
+Maintainance() {
+
+  // FETCH DATA FIRST
+  this.profiledata = this.LocalInteractionService.GetProfileData();
+  this.googledata = this.LocalInteractionService.GetGoogleData();
+
+  // EXECUTE COMMON MODULE 
+  this.CommonRoutine();
+
+  // CALCULATE MACROS FOR MAINTAINANCE BASED ON EXPERIENCE
+  this.MacroGenerator(this.caloriedata['maintainance'], this.profiledata.weight, this.profiledata.experience);
+  console.log(this.caloriedata);
+
+  // CALCULATE CARDIO FOR MAINTAINANCE
+  this.Cardio(this.profiledata.lifestyle, this.profiledata.goal);
+
+}
+
+Bulking() {
+
+  // FETCH DATA FIRST
+  this.profiledata = this.LocalInteractionService.GetProfileData();
+  this.googledata = this.LocalInteractionService.GetGoogleData();
+
+  // EXECUTE COMMON MODULE 
+  this.CommonRoutine();
+
+  // BULKING CALS
+  switch(this.profiledata.goal) {
+    case 1: case 2: case 3: case 4: { 
+      this.caloriedata['goalerrormsg'] = `According to our database, your current goal is set to ${this.goals[this.profiledata.goal-1]}`;
+      return;
+    }
+    case 5: { 
+      this.caloriedata['bulkingcal'] = this.caloriedata['maintainance']+250;
+      break;
+    }
+    case 6: { 
+      this.caloriedata['bulkingcal'] = this.caloriedata['maintainance']+500;
+      break;
+    }
+    default: {console.log('FATAL BULKING CALS ERROR'); break;}
+  }
+
+  // CALCULATE MACROS FOR BULKING BASED ON EXPERIENCE
+  this.MacroGenerator(this.caloriedata['bulkingcal'], this.profiledata.weight, this.profiledata.experience);
+  console.log(this.caloriedata);
+
+  // CALCULATE CARDIO FOR BULKING
+  this.Cardio(this.profiledata.lifestyle, this.profiledata.goal);
 
 }
 

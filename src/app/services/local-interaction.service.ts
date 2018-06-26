@@ -65,7 +65,7 @@ calarray = [
   profiledata: ProfileData = {
     age: 21,
     experience : 2,
-    goal : 2,
+    goal : 5,
     heightcm : 172,
     heightunit : 1,
     lifestyle : 2, 

@@ -20,7 +20,7 @@ export class CaloriecardComponent implements OnInit {
   }
 
   test() {
-    this.cal.FatLoss();
+    this.cal.Bulking();
   }
 
 }
