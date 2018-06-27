@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
+  benefits = ['Enhance Mood','Reduce Stress','Become Sexy','Get Stronger','Improve Heart Health','Become Confident'];
+
   ngOnInit() {
     this.titleService.setTitle(this.route.snapshot.data['title'])
   }

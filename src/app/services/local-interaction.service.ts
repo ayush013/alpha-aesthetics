@@ -64,11 +64,11 @@ calarray = [
   
   profiledata: ProfileData = {
     age: 21,
-    experience : 1,
+    experience : 2,
     goal : 4,
     heightcm : 172,
     heightunit : 1,
-    lifestyle : 2, 
+    lifestyle : 1, 
     weight : 70, 
     weightunit : 1
   };
