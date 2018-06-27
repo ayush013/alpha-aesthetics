@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     { path: 'calculator', component: CalorieCalcComponent, data: { title: 'Calorie Calculator'} },
     { path: 'calculator/fatloss', component: FatlossComponent, data: { title: 'Calorie Calculator'} },
     { path: 'calculator/bulking', component: BulkingComponent, data: { title: 'Calorie Calculator'} },
-    { path: 'calculator/maintainance', component: MaintainComponent, data: { title: 'Calorie Calculator'} },
+    { path: 'calculator/maintenance', component: MaintainComponent, data: { title: 'Calorie Calculator'} },
     { path: 'mealplan', component: MealPlanComponent, data: { title: 'Meal Plan Generator'} },
     { path: 'workout', component: WorkoutComponent, data: { title: 'Free Workout Plans'} },
     { path: 'workout/:path', component: WorkoutTableComponent, data: { title: 'Free Workout Plans'} },

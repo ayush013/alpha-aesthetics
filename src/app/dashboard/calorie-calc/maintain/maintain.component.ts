@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CalorieCalculatorService } from '../../../services/calorie-calculator.service';
 
 @Component({
   selector: 'app-maintain',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MaintainComponent implements OnInit {
 
-  constructor() { }
+  constructor(private CalorieService: CalorieCalculatorService) { }
+
+  caldata = {};
 
   ngOnInit() {
+    this.caldata = this.CalorieService.Maintenance();
+    console.log(this.caldata);
   }
 
 }

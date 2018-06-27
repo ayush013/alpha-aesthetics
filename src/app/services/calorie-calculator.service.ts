@@ -184,12 +184,15 @@ CommonRoutine() {
     this.BMR(this.googledata.gender, this.profiledata.weight, this.profiledata.heightcm, this.profiledata.age);
   
   
-    // CALCULATE MAINtenance CALS
+    // CALCULATE MAINTENANCE CALS
       this.MaintenanceCal(this.caloriedata['bmr'], this.profiledata['lifestyle']);  
 }
 
 
 FatLoss() {
+
+  // CLEAR OBJECT FIRST
+  this.caloriedata = {};
 
   // FETCH DATA FIRST
   this.profiledata = this.LocalInteractionService.GetProfileData();
@@ -236,6 +239,9 @@ FatLoss() {
 
 Maintenance() {
 
+  // CLEAR OBJECT FIRST
+  this.caloriedata = {};
+
   // FETCH DATA FIRST
   this.profiledata = this.LocalInteractionService.GetProfileData();
   this.googledata = this.LocalInteractionService.GetGoogleData();
@@ -243,11 +249,17 @@ Maintenance() {
   // EXECUTE COMMON MODULE 
   this.CommonRoutine();
 
-  // CALCULATE MACROS FOR MAINtenance BASED ON EXPERIENCE
+  // RETURN IF GOAL != 4
+  if(this.profiledata.goal != 4)  {
+    this.caloriedata['goalerrormsg'] = `${this.goals[this.profiledata.goal-1]}`;
+      return this.caloriedata;
+  }
+
+  // CALCULATE MACROS FOR MAINTENANCE BASED ON EXPERIENCE
   this.MacroGenerator(this.caloriedata['maintenance'], this.profiledata.weight, this.profiledata.experience);
   console.log(this.caloriedata);
 
-  // CALCULATE CARDIO FOR MAINtenance
+  // CALCULATE CARDIO FOR MAINTENANCE
   this.Cardio(this.profiledata.lifestyle, this.profiledata.goal);
 
   // RETURN DATA
@@ -255,6 +267,9 @@ Maintenance() {
 }
 
 Bulking() {
+
+  // CLEAR OBJECT FIRST
+  this.caloriedata = {};
 
   // FETCH DATA FIRST
   this.profiledata = this.LocalInteractionService.GetProfileData();
