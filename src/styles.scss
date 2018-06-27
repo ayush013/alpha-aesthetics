@@ -59,6 +59,54 @@ body::-webkit-scrollbar-track{
 .gradient6 {
     background: linear-gradient(40deg, #ff6161, #940202)!important;
 }
-.gradient7 {
 
+.macroupper {
+    text-transform: uppercase;
+}
+
+.sizeup {
+    font-size: 1.2em !important;
+    text-transform: uppercase;
+}
+
+.highlights {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 0.5em;
+    font-weight: 700 !important;
+    width: auto;
+    font-size: 2em;
+    text-align: center;
+    color: #33b5e5;
+    margin: 0.5em 0;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.accordbtn {
+    display: block;
+    width: 66%;
+    border-color: #b9b9b9 !important;
+    margin: 0 auto;
+    border-width: 1px !important;
+    color: black !important;
+    background-color: #f3f3f3 !important;
+}
+
+.accordcontent {
+    border: 1px solid rgb(221, 221, 221);
+    padding: 1em;
+    width: 66%;
+    margin: 0 auto;
+}
+
+.errorbtn {
+    font-weight: 500;
+}
+
+.btn-rounded {
+    border-radius: 2em; 
+}
+
+.highlights:hover {
+    background-color: #ececec;
 }

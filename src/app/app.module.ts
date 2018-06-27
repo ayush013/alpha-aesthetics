@@ -28,10 +28,12 @@ import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CaloriecardComponent } from './dashboard/calorie-calc/caloriecard/caloriecard.component';
-import { CaloriearticleComponent } from './dashboard/calorie-calc/caloriearticle/caloriearticle.component';
 import { LocalInteractionService } from './services/local-interaction.service';
 import { CalorieCalculatorService } from './services/calorie-calculator.service';
 import { ServerInteractionService } from './services/server-interaction.service';
+import { FatlossComponent } from './dashboard/calorie-calc/fatloss/fatloss.component';
+import { BulkingComponent } from './dashboard/calorie-calc/bulking/bulking.component';
+import { MaintainComponent } from './dashboard/calorie-calc/maintain/maintain.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { ServerInteractionService } from './services/server-interaction.service'
     InsightcardComponent,
     BlogArticleComponent,
     CaloriecardComponent,
-    CaloriearticleComponent,
+    BulkingComponent,
+    MaintainComponent,
+    FatlossComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

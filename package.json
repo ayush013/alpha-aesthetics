@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "angular-bootstrap-md": "^6.1.4",
+    "angular2-counto": "^1.2.5",
+    "angular4-counter-up": "^1.0.3",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",

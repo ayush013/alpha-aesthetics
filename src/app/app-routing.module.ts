@@ -18,7 +18,10 @@ import { BlogComponent } from './dashboard/blog/blog.component';
 import { BlogArticleComponent } from './dashboard/blog/blog-article/blog-article.component';
 import { WorkoutTableComponent } from './dashboard/workout/workout-table/workout-table.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { CaloriearticleComponent } from './dashboard/calorie-calc/caloriearticle/caloriearticle.component';
+
+import { FatlossComponent } from './dashboard/calorie-calc/fatloss/fatloss.component';
+import { BulkingComponent } from './dashboard/calorie-calc/bulking/bulking.component';
+import { MaintainComponent } from './dashboard/calorie-calc/maintain/maintain.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Alpha Aesthetics'} },
@@ -28,7 +31,9 @@ const appRoutes: Routes = [
     { path: 'home', component: DhomeComponent, data: { title: 'Dashboard - Home'} },
     { path: 'profile', component: ProfileComponent, data: { title: 'Dashboard - Profile'} },
     { path: 'calculator', component: CalorieCalcComponent, data: { title: 'Calorie Calculator'} },
-    { path: 'calculator/:path', component: CaloriearticleComponent, data: { title: 'Calorie Calculator'} },
+    { path: 'calculator/fatloss', component: FatlossComponent, data: { title: 'Calorie Calculator'} },
+    { path: 'calculator/bulking', component: BulkingComponent, data: { title: 'Calorie Calculator'} },
+    { path: 'calculator/maintainance', component: MaintainComponent, data: { title: 'Calorie Calculator'} },
     { path: 'mealplan', component: MealPlanComponent, data: { title: 'Meal Plan Generator'} },
     { path: 'workout', component: WorkoutComponent, data: { title: 'Free Workout Plans'} },
     { path: 'workout/:path', component: WorkoutTableComponent, data: { title: 'Free Workout Plans'} },

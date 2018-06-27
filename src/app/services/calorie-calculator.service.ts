@@ -14,6 +14,16 @@ export class CalorieCalculatorService {
   caloriedata = {};
   goals = ['Lose 1 kg per week','Lose 0.5 kg per week','Lose 0.25 kg per week','Maintain Current Weight','Gain 0.25 kg per week','Gain 0.5 kg per week'];
 
+  experience = [{name:'Beginner', desc:'Little to no experience in gym. Just started your fitness journey. 😊'},
+  {name:'Intermediate', desc:'Been working out consistently for 1-3 years. Intermediate knowledge about health and fitness 💪'},
+  {name:'Advanced', desc:'Been working out consistently for 3+ years. You know your shit! 🏋'}
+  ];
+  lifestyle = [{name:'Sedentary', desc:'Spend most of the day sitting (E.g. Desk Job, Developer 🤓)'},
+  {name:'Lightly Active', desc:'Spend good part of the day on your feet (E.g. College Student )/ Exercise 2-3 times a week'},
+  {name:'Active', desc:'Spend good part of the day doing physical activity / Exercise 5-6 times a week'},
+  {name:'Highly Active', desc:'Spend most of the day doing heavy physical activity / Intense exercise daily'},
+  ];
+
   BMR(gender, weight, height, age) {
     if(gender === 'male' ) {
 
@@ -40,13 +50,13 @@ ConvertWeight(weight) {
   this.profiledata['weight'] = (Math.round(weight*100/2.2046226218)/100);
 }
 
-MaintainanceCal(bmr, lifestyle) {
+MaintenanceCal(bmr, lifestyle) {
   switch(lifestyle) {
-    case 1: {this.caloriedata['maintainance'] = bmr*1.2; break;}
-    case 2: {this.caloriedata['maintainance'] = bmr*1.35; break;}
-    case 3: {this.caloriedata['maintainance'] = bmr*1.45; break;}
-    case 4: {this.caloriedata['maintainance'] = bmr*1.75; break;}
-    default: {console.log('FATAL MAINTAINANCE ERROR'); break;}
+    case 1: {this.caloriedata['maintenance'] = bmr*1.2; break;}
+    case 2: {this.caloriedata['maintenance'] = bmr*1.35; break;}
+    case 3: {this.caloriedata['maintenance'] = bmr*1.45; break;}
+    case 4: {this.caloriedata['maintenance'] = bmr*1.75; break;}
+    default: {console.log('FATAL MAINTENANCE ERROR'); break;}
   }
 }
 
@@ -155,10 +165,9 @@ Cardio(activity, goal) {
 CommonRoutine() {
     // ADD USER NAME TO CALORIEDATA OBJECT
     this.caloriedata['name'] = this.googledata.fname;
-    this.caloriedata['imgsrc'] = this.googledata.imgsrc;
-    this.caloriedata['age'] = this.profiledata.age;
-    this.caloriedata['experience'] = this.profiledata.experience;
-    this.caloriedata['lifestyle'] = this.profiledata.lifestyle;
+    this.caloriedata['experience'] = this.experience[this.profiledata.experience-1].name;
+    this.caloriedata['lifestyle'] = this.lifestyle[this.profiledata.lifestyle-1].name;
+    this.caloriedata['goal'] = this.goals[this.profiledata.goal-1];
 
     // CONVERT HEIGHT INCHES TO CMS
       if(this.profiledata.heightunit === 2 ) {
@@ -175,8 +184,8 @@ CommonRoutine() {
     this.BMR(this.googledata.gender, this.profiledata.weight, this.profiledata.heightcm, this.profiledata.age);
   
   
-    // CALCULATE MAINTAINANCE CALS
-      this.MaintainanceCal(this.caloriedata['bmr'], this.profiledata['lifestyle']);  
+    // CALCULATE MAINtenance CALS
+      this.MaintenanceCal(this.caloriedata['bmr'], this.profiledata['lifestyle']);  
 }
 
 
@@ -196,20 +205,20 @@ FatLoss() {
   // FATLOSS CALS
   switch(this.profiledata.goal) {
     case 1: { 
-      this.caloriedata['fatlosscal'] = Math.max((this.caloriedata['maintainance']-1000), this.caloriedata['rockbottom']);
+      this.caloriedata['fatlosscal'] = Math.max((this.caloriedata['maintenance']-1000), this.caloriedata['rockbottom']);
       break;
     }
     case 2: { 
-      this.caloriedata['fatlosscal'] = Math.max((this.caloriedata['maintainance']-500), this.caloriedata['rockbottom']);
+      this.caloriedata['fatlosscal'] = Math.max((this.caloriedata['maintenance']-500), this.caloriedata['rockbottom']);
       break;
     }
     case 3: { 
-      this.caloriedata['fatlosscal'] = Math.max((this.caloriedata['maintainance']-250), this.caloriedata['rockbottom']);
+      this.caloriedata['fatlosscal'] = Math.max((this.caloriedata['maintenance']-250), this.caloriedata['rockbottom']);
       break;
     }
     case 4: case 5: case 6: { 
-      this.caloriedata['goalerrormsg'] = `According to our database, your current goal is set to ${this.goals[this.profiledata.goal-1]}`;
-        return; } 
+      this.caloriedata['goalerrormsg'] = `${this.goals[this.profiledata.goal-1]}`;
+        return this.caloriedata;; } 
     default: {console.log('FATAL FATLOSS CALS ERROR'); break;}
   }
 
@@ -220,9 +229,12 @@ FatLoss() {
   // CALCULATE CARDIO FOR FATLOSS
   this.Cardio(this.profiledata.lifestyle, this.profiledata.goal);
 
+  // RETURN DATA
+  return this.caloriedata;
+
 }
 
-Maintainance() {
+Maintenance() {
 
   // FETCH DATA FIRST
   this.profiledata = this.LocalInteractionService.GetProfileData();
@@ -231,13 +243,15 @@ Maintainance() {
   // EXECUTE COMMON MODULE 
   this.CommonRoutine();
 
-  // CALCULATE MACROS FOR MAINTAINANCE BASED ON EXPERIENCE
-  this.MacroGenerator(this.caloriedata['maintainance'], this.profiledata.weight, this.profiledata.experience);
+  // CALCULATE MACROS FOR MAINtenance BASED ON EXPERIENCE
+  this.MacroGenerator(this.caloriedata['maintenance'], this.profiledata.weight, this.profiledata.experience);
   console.log(this.caloriedata);
 
-  // CALCULATE CARDIO FOR MAINTAINANCE
+  // CALCULATE CARDIO FOR MAINtenance
   this.Cardio(this.profiledata.lifestyle, this.profiledata.goal);
 
+  // RETURN DATA
+  return this.caloriedata;
 }
 
 Bulking() {
@@ -251,17 +265,17 @@ Bulking() {
 
   // BULKING CALS
   switch(this.profiledata.goal) {
-    case 1: case 2: case 3: case 4: { 
-      this.caloriedata['goalerrormsg'] = `According to our database, your current goal is set to ${this.goals[this.profiledata.goal-1]}`;
-      return;
-    }
     case 5: { 
-      this.caloriedata['bulkingcal'] = this.caloriedata['maintainance']+250;
+      this.caloriedata['bulkingcal'] = this.caloriedata['maintenance']+250;
       break;
     }
     case 6: { 
-      this.caloriedata['bulkingcal'] = this.caloriedata['maintainance']+500;
+      this.caloriedata['bulkingcal'] = this.caloriedata['maintenance']+500;
       break;
+    }
+    case 1: case 2: case 3: case 4: { 
+      this.caloriedata['goalerrormsg'] = `${this.goals[this.profiledata.goal-1]}`;
+      return this.caloriedata;
     }
     default: {console.log('FATAL BULKING CALS ERROR'); break;}
   }
@@ -273,6 +287,8 @@ Bulking() {
   // CALCULATE CARDIO FOR BULKING
   this.Cardio(this.profiledata.lifestyle, this.profiledata.goal);
 
+  // RETURN DATA
+  return this.caloriedata;
 }
 
 
