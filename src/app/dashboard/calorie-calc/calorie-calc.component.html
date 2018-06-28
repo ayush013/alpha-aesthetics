@@ -1,5 +1,5 @@
 <div class="row adjustment">
-    <div class="col-md-4 col-12" *ngFor="let caldata of calarray">
+    <div class="col-md-4 col-12" *ngFor="let caldata of calarray; let i= index" [ngsReveal]="{delay: i*200 }" >
       <app-caloriecard [calObj]="caldata"></app-caloriecard>
     </div>
 </div>

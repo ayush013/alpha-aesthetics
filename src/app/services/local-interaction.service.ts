@@ -37,9 +37,9 @@ workoutarray = [
 ];
 
 calarray = [
-  { route: 'bulking', title: 'Gain Weight', features: ['Caloric Surplus','Gain Muscle and Strength','Suitable for Lean Bulking'], image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLpqkEvNqMHwLfBfU6Q3iPfGCUfvvPhZ1yxkCYQ6n_VUWJ1Ar'},
-  { route: 'fatloss', title: 'Lose Weight', features: ['Caloric Deficit','Lose Fat and Get Shredded','Maintain Muscle and Strength'], image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLpqkEvNqMHwLfBfU6Q3iPfGCUfvvPhZ1yxkCYQ6n_VUWJ1Ar'},
-  { route: 'maintenance', title: 'Maintain Weight', features: ['Maintenance Calories','Lose Fat and Build Muscle slowly','Body Recomposition'], image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuLpqkEvNqMHwLfBfU6Q3iPfGCUfvvPhZ1yxkCYQ6n_VUWJ1Ar'}
+  { route: 'bulking', title: 'Gain Weight', features: ['Caloric Surplus','Gain Muscle and Strength','Suitable for Lean Bulking'], image: '../../assets/images/dashboard/gainweight.svg'},
+  { route: 'fatloss', title: 'Lose Weight', features: ['Caloric Deficit','Lose Fat and Get Shredded','Maintain Muscle and Strength'], image: '../../assets/images/dashboard/loseweight.svg'},
+  { route: 'maintenance', title: 'Maintain Weight', features: ['Maintenance Calories','Lose Fat and Build Muscle slowly','Body Recomposition'], image: '../../assets/images/dashboard/maintainweight.svg'}
 ];
 
   private blogArray = new BehaviorSubject(this.blogarray);
@@ -65,7 +65,7 @@ calarray = [
   profiledata: ProfileData = {
     age: 21,
     experience : 2,
-    goal : 4,
+    goal : 5,
     heightcm : 172,
     heightunit : 1,
     lifestyle : 1, 

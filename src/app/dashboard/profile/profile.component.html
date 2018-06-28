@@ -1,8 +1,8 @@
-<div class="adjustment">
+<div class="adjustment" [ngsRevealSet]="{ reset:true }" [ngsInterval]="100" [ngsSelector]="'.item'">
   <div class="card card-cascade narrower">
 
   <!-- Card image -->
-  <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+  <div class="view view-cascade overlay waves-light item" mdbWavesEffect>
     <img class="card-img-top" [src]="googledata.imgsrc" alt="Card image">
     <a>
       <div class="mask rgba-white-slight"></div>
@@ -10,7 +10,7 @@
   </div>
 
   <!-- Card content -->
-  <div class="card-body card-body-cascade">
+  <div class="card-body card-body-cascade" >
 
     <!-- Title -->
     <h4 class="card-title text-center">Welcome {{googledata.fname}}</h4>
@@ -18,37 +18,37 @@
     <form [formGroup]="ProfileFormData" (ngSubmit)="SaveProfile()">
       <div class="row">
         <div class="col-8">
-          <div class="md-form">
+          <div class="md-form item">
             <i class="fa fa-balance-scale prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('weight').valid, 'icon-invalid': (ProfileFormData.get('weight').invalid && ProfileFormData.get('weight').touched) }"></i>
             <input type="number" id="weight" class="form-control"  formControlName="weight" >
             <label for="weight">Enter your bodyweight</label>
         </div>
         </div>
-        <div class="btn-group col-4" data-toggle="buttons">
+        <div class="btn-group col-4 item" data-toggle="buttons">
           <button class="btn btn-default gradient1 form-check-label weightlabel waves-light" mdbWavesEffect *ngFor="let unit of weightunit; let i = index" (click)="ConvertWeight(i+1)" [ngClass]="{'active': ProfileFormData.get('weightunit').value == i+1 }"> 
               <input class="form-check-input" type="radio" name="weightunit" formControlName="weightunit" [value]="i+1" > {{unit}}
           </button>
         </div>
       </div>
-      <div class="md-form">
+      <div class="md-form item">
         <i class="fa fa-balance-scale prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('age').valid, 'icon-invalid': (ProfileFormData.get('age').invalid && ProfileFormData.get('age').touched) }"></i>
         <input type="number" id="age" class="form-control"  formControlName="age" >
         <label for="age">How Young are you?</label>
       </div>
       <div class="row">
-        <div class="md-form col-8">
+        <div class="md-form col-8 item">
           <i class="fa fa-envelope prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('email').pristine,  'icon-invalid': ProfileFormData.get('email').dirty }"></i>
           <input type="email" id="email" class="form-control" formControlName="email" >
           <label for="email">Enter your email</label> 
         </div>
 
-        <div class="md-form col-4">
+        <div class="md-form col-4 item">
             <i class="fa fa-venus-mars prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('gender').pristine,  'icon-invalid': ProfileFormData.get('gender').dirty }"></i>
             <input type="text" id="gender" class="form-control" formControlName="gender" >
             <label for="gender">Gender</label> 
         </div>
      </div>
-    <div class="md-form">
+    <div class="md-form item">
         <div class="dropdown" id="goal">
             <input type="number" hidden formControlName="goal"  id="goalinput">
             <p class="selected"><span>Select Your Goal</span> <i class="fa fa-caret-down"></i></p>
@@ -57,7 +57,7 @@
             </ul>
         </div>
     </div>
-    <div class="row rb-row">
+    <div class="row rb-row item">
       <div class="col-12">Your Experience Level -</div>
       <div class="btn-group mx-auto" data-toggle="buttons">
           <label class="btn btn-default gradient1 form-check-label waves-light explabel" triggers="mouseenter:mouseleave" mdbWavesEffect *ngFor="let exp of experience; let i = index" [ngClass]="{'active': ProfileFormData.get('experience').value == i+1 }" [mdbPopover]="exp.desc">
@@ -65,7 +65,7 @@
           </label>
       </div>
     </div>
-    <div class="row rb-row">
+    <div class="row rb-row item">
         <div class="col-12">Your Activity Level -</div>
         <div class="btn-group mx-auto" data-toggle="buttons">
             <label class="btn btn-default gradient1 form-check-label waves-light actlabel" triggers="mouseenter:mouseleave" mdbWavesEffect *ngFor="let activity of lifestyle; let i = index" [ngClass]="{'active': ProfileFormData.get('lifestyle').value == i+1 }" [mdbPopover]="activity.desc">
@@ -75,33 +75,33 @@
       </div>
     <div class="row">
       <div class="col-8" *ngIf="ProfileFormData.get('heightunit').value == 1">
-      <div class="md-form ">
+      <div class="md-form item">
           <i class="fa fa-user prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('heightcm').valid, 'icon-invalid': (ProfileFormData.get('heightcm').invalid && ProfileFormData.get('heightcm').touched) }"></i>
           <input type="number" id="height" class="form-control" formControlName="heightcm" >
           <label for="height">Enter your height</label>
       </div>
       </div>
         <div class="col-4" *ngIf="ProfileFormData.get('heightunit').value == 2">
-            <div class="md-form ">
+            <div class="md-form item">
                 <i class="fa fa-user prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('heightfeet').valid, 'icon-invalid': (ProfileFormData.get('heightfeet').invalid && ProfileFormData.get('heightfeet').touched) }"></i>
                 <input type="number" id="height" class="form-control" formControlName="heightfeet" >
                 <label for="height">Height in feets</label>
             </div>
         </div>
         <div class="col-4" *ngIf="ProfileFormData.get('heightunit').value == 2">
-            <div class="md-form ">
+            <div class="md-form item">
                 <i class="fa fa-user prefix grey-text" [ngClass]="{'icon-success': ProfileFormData.get('heightinch').valid, 'icon-invalid': (ProfileFormData.get('heightinch').invalid && ProfileFormData.get('heightinch').touched) }"></i>
                 <input type="number" id="height" class="form-control" formControlName="heightinch" >
                 <label for="height">inches</label>
             </div>
         </div>
-      <div class="btn-group col-4" data-toggle="buttons">
+      <div class="btn-group col-4 item" data-toggle="buttons">
           <button class="btn btn-default gradient1 form-check-label heightlabel waves-light" mdbWavesEffect *ngFor="let unit of heightunit; let i = index" (click)="ConvertHeight(i+1)" [ngClass]="{'active': ProfileFormData.get('heightunit').value == i+1 }"> 
               <input class="form-check-input" type="radio" name="heightunit" formControlName="heightunit" [value]="i+1" > {{unit}}
           </button>
       </div>
     </div>
-    <div class="text-center mt-4">
+    <div class="text-center mt-4 item">
       <button type="submit" class="btn btn-indigo gradient1 waves-light" mdbWavesEffect [disabled]="!ProfileFormData.valid">Save Details</button>
     </div>
     </form>

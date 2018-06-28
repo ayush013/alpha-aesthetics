@@ -1,8 +1,8 @@
 <div class="adjustment">
-    <div class="card card-cascade narrower">
+    <div class="card card-cascade narrower" [ngsRevealSet]="{ reset:true }" [ngsInterval]="100" [ngsSelector]="'.item'">
 
     <!-- Card image -->
-    <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+    <div class="view view-cascade overlay waves-light item" mdbWavesEffect>
       <img class="card-img-top" [src]="blogObj.image" alt="Card image">
       <a>
         <div class="mask rgba-white-slight"></div>
@@ -13,11 +13,11 @@
     <div class="card-body card-body-cascade">
   
       <!-- Label -->
-      <h5 class="cyan-text pb-2 pt-1"><i class="fa" [ngClass]="blogObj.icon"></i> {{blogObj.category}}</h5>
+      <h5 class="cyan-text pb-2 pt-1 item"><i class="fa" [ngClass]="blogObj.icon"></i> {{blogObj.category}}</h5>
       <!-- Title -->
-      <h4 class="card-title">{{blogObj.title}}</h4>
+      <h4 class="card-title item">{{blogObj.title}}</h4>
       <!-- Text -->
-      <p class="card-text">{{blogObj.article}}</p>  
+      <p class="card-text item">{{blogObj.article}}</p>  
     </div>
   
   </div>
