@@ -114,3 +114,25 @@ body {
     background-color: #ececec;
 }
 
+
+#parallaxdoodle {
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    z-index: -1;
+}
+#doodlelayer {
+    background: url(assets/images/home/doodle.svg);
+    background-size: 200px;
+    background-repeat: repeat;
+    position: absolute;
+    height: 120vh;
+    width: 120vw;
+    top: -10vh;
+    left: -10vw;
+    z-index: -1;
+}
+
+body.modal-open {
+    overflow-x: hidden;
+}

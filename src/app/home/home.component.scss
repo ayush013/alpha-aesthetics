@@ -2,6 +2,10 @@
 min-height: 100vh;
 }
 
+.section {
+    position: relative;
+}
+
 nav {
     background: transparent;
 }
@@ -13,10 +17,10 @@ nav {
 }
 
 #landingtitle1 {
-    font-size: 4em;
+    font-size: 3.5em;
     text-align: center;
-    letter-spacing: 11px;
-    font-weight: 400;
+    letter-spacing: 12px;
+    font-weight: 700;
     line-height: 1;
     margin-bottom: 0;
 }
@@ -24,8 +28,8 @@ nav {
 #landingtitle2 {
     font-size: 1.8em;
     text-align: center;
-    letter-spacing: 11px;
-    font-weight: 400;
+    letter-spacing: 9px;
+    font-weight: 700;
     line-height: 1;
 }
 
@@ -45,24 +49,6 @@ nav {
     right: 0; 
     z-index: -1;
     opacity: 0.7;
-}
-
-#parallaxdoodle {
-    height: 100vh;
-    position: absolute;
-    width: 100vw;
-    z-index: -1;
-}
-#doodlelayer {
-    background: url(../../assets/images/home/doodle.svg);
-    background-size: 200px;
-    background-repeat: repeat;
-    position: absolute;
-    height: 120vh;
-    width: 120vw;
-    top: -10vh;
-    left: -10vw;
-    z-index: -1;
 }
 
 #landingquotes {
@@ -133,11 +119,11 @@ nav {
 	}
 	15% {
 	opacity: 1;
-	top: 50%;
+	top: 70%;
 	}
 	50% {
 	opacity: 0;
-	top: 50%;
+	top: 70%;
 	}
 	100% {
 	opacity: 0;
@@ -145,3 +131,195 @@ nav {
 	}
 }
 
+.loginbtn {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 18px 24px;
+    overflow: hidden;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 15vw;
+    text-align: center;
+  }
+  
+  .loginbtn:after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease;
+    background-color: rgb(0, 0, 0);
+    z-index: -1;
+  }
+  
+  .loginbtn:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    transition-delay: .25s;
+  }
+  
+  .loginbtn:hover:after {
+    top: 0;
+    transition-delay: .2s;
+  }
+  .loginbtn:hover .border-top {
+    left: -100%;
+  }
+  .loginbtn:hover .border-bottom {
+    left: 100%;
+  }
+  .loginbtn:hover .border-right {
+    top: -100%;
+  }
+  .loginbtn:hover .border-left {
+    top: 100%;
+  }
+  
+  a.loginbtn span {
+    transition: all .3s ease;
+    position: absolute;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .border-top {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+  }
+  
+  .border-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+  }
+  
+  .border-right {
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+  }
+  
+  .border-left {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 2px;
+  }
+  
+.modal-body {
+    padding: 2rem 4rem;
+}
+
+.modal-dialog.cascading-modal .modal-header .title {
+    font-weight: 400;
+}
+
+ a:not([href]):not([tabindex]):hover {
+    color: white;
+}
+
+.diettitle {
+    font-size: 4em;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+#diet2 {
+    font-size: 2.6em;
+    font-weight: 400;
+}
+
+#diet3 {
+    font-size: 3.5em;
+}
+
+#diet4 {
+    font-weight: 400;
+    font-size: 1.8em;
+}
+
+#benefit1 {
+    margin-top: 20vh;
+    font-size: 2.6em;
+    font-weight: 400;
+}
+
+#benefit2 {
+    font-size: 3.1em;
+}
+
+#benefit3 {
+    font-size: 6em;
+}
+
+#benefitmale, #benefitfemale {
+    position: absolute;
+    height: 70vh;
+}
+#benefitfemale {
+    left: 46vh;
+}
+#benefitmale {
+    left: 72vh;
+}
+
+#parallaxmodel, #parallaxicons {
+    height: 70vh;
+    top: 20vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+}
+
+#parallaxicons {
+    top: 0;
+}
+
+.iconoverlay {
+    position: absolute;
+    width: 5vw;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+}
+
+.iconoverlay:hover {
+    transform: scale(1.3);
+}
+
+#benefiticon1 {
+    top: 2vh;
+    left: 14vw;
+}
+
+#benefiticon2 {
+    top: 28vh;
+    left: 3vw;
+}
+#benefiticon3 {
+    top: 54vh;
+    left: 10vw;
+}
+#benefiticon4 {
+    top: 10vh;
+    left: 62vw;
+}
+#benefiticon5 {
+    top: 32vh;
+    left: 70vw;
+}
+#benefiticon6 {
+    top: 58vh;
+    left: 61vw;
+}

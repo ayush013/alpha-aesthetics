@@ -16,6 +16,8 @@ export class ErrorPageComponent implements OnInit {
     this.titleService.setTitle(this.route.snapshot.data['title']);
     var scene = document.getElementById('parallax');
     var parallaxInstance = new Parallax(scene);
+    var scene2 = document.getElementById('parallaxdoodle');
+    var parallaxInstance = new Parallax(scene2);
   }
 
 }

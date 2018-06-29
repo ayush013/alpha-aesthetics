@@ -18,7 +18,6 @@ export class NavComponent implements OnInit {
           this.renderer.addClass(document.getElementById('navbar'), 'home');
         }
         let currentUrlSlug = event.url.slice(1)
-        console.log(currentUrlSlug)
         if (currentUrlSlug) {
           this.renderer.removeClass(document.getElementById('navbar'), 'home');
         }

@@ -34,9 +34,9 @@
           ],
           "scripts": [
              "node_modules/jquery/dist/jquery.min.js",
-             "node_modules/parallax-js/src/parallax.js",
+             "node_modules/parallax-js/dist/parallax.js",
              "src/assets/js/scrollreveal.min.js"
-          ]
+            ]
           },
           "configurations": {
             "production": {
