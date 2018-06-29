@@ -3,6 +3,7 @@ nav {
     background-color: white;
     padding-left: 2.5rem;
     padding-right: 10vw !important;
+    transition: .5s;
 }
 
 a.navbar-brand {
@@ -43,4 +44,14 @@ a.nav-link.border.border-light {
 
 .navbar .nav-item .nav-link {
     font-size: 0.9em;
+}
+
+nav.home {
+    background: linear-gradient(#fff, rgba(255, 255, 255, 0));
+    box-shadow: none;
+    height: 11vh;
+}
+
+.home a.nav-link {
+    color: #000000;
 }

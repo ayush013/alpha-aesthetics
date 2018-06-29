@@ -1,1 +1,22 @@
 <!-- SMOOTH SCROLL, INTERNAL PAGINATION, SCROLL REVEAL, PARALLAX, TYPE JS, SLIDE OUT, SCROLL DOWN BUTTON-->
+<ul id="parallaxdoodle">
+<li class="layer" data-depth="0.40"><div id="doodlelayer"></div></li>
+</ul>
+<div class="container-fluid" id="landing" [ngsRevealSet]="{ reset:true }" [ngsInterval]="500" [ngsSelector]="'.item'">
+    <h1 class="adjustmenttext"></h1>
+    <div id="gradientlayer"></div>
+    <img src="../../assets/images/LOGO-small.svg" id="landinglogo" class="item">
+    <h1 id="landingtitle1" class="item">ALPHA</h1>
+    <h1 id="landingtitle2" class="item">AESTHETICS</h1>
+    <h1 id="landingquotes" class="item"></h1>
+
+    <span class="scroll-btn">
+        <a href="#about">
+          <span class="mouse">
+            <span>
+            </span>
+          </span>
+        </a>
+        <p>SCROLL DOWN</p>  
+      </span>
+</div>

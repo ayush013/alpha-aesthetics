@@ -11,6 +11,9 @@ body::-webkit-scrollbar-track{
   body::-webkit-scrollbar{width:5px;background-color:rgba(255,255,255,.05)}
   body::-webkit-scrollbar-thumb{background-color:#000000}
   
+body {
+    overflow-x: hidden;
+}
 
 .adjustment {
     margin-left: 20vw;
