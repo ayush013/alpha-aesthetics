@@ -108,6 +108,7 @@ ul::-webkit-scrollbar {
 
 .btn {
     transition: 0.3s;
+    padding: 0.64rem 1.7rem;
 }
 
 button.active, label.active,  .btn-default:not([disabled]):not(.disabled).active {
