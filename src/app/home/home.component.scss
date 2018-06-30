@@ -372,7 +372,7 @@ nav {
     display: block;
     margin: 0 auto;
     width: 7vw;
-    filter: drop-shadow( 0px 0px 7px rgba(0, 0, 0, 0.6) );
+    filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.6) );
 }
 
 #fullpage {
@@ -417,7 +417,7 @@ nav {
 
 #food7 {
     top: 2vh;
-    left: 74vw;
+    left: 70vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
@@ -450,11 +450,65 @@ nav {
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
+#food13 {
+    top: 1vh;
+    left: 14vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
 
-#hungry {
-    height: 50vh;
+#food14 {
+    top: 15vh;
+    left: 5vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+
+#food15 {
+    top: 51vh;
+    left: 5vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food16 {
+    top: 61vh;
+    left: 28vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+
+#food17 {
+    top: 5vh;
+    left: 85vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+
+#food18 {
+    top: 25vh;
+    left: 90vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food19 {
+    top: 60vh;
+    left: 80vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+#food20 {
+    top: 65vh;
+    left: 90vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+
+.hungry {
+    width: 30vw;
     display: block;
-    margin: 0 auto;
+    position: absolute;
+    top: 27vh;
+    left: 35vw;
+    right: 0;
+}
+
+.svgshadow {
+    filter: drop-shadow( 0px 0px 5px rgba(0, 0, 0, 0.5) );
 }
 
 #dieting {

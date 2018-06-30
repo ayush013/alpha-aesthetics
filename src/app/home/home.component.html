@@ -36,7 +36,7 @@
         </div>
         <!--Modal-->
 
-    <div class="container section" id="landing" [ngsRevealSet]="{ reset:true }" [ngsInterval]="500" [ngsSelector]="'.item'" [ngsReveal]="{ reset: true}">
+    <div class="container section" id="landing" [ngsRevealSet]="{ reset:true }" [ngsInterval]="100" [ngsSelector]="'.item'" [ngsReveal]="{ reset: true}">
         <h1 class="adjustmenttext"></h1>
         <img src="../../assets/images/LOGO-small.svg" id="landinglogo" class="item">
         <h1 id="landingtitle1" class="item">ALPHA</h1>
@@ -70,9 +70,17 @@
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet2">IS ALL ABOUT</h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet3">BALANCE</h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">BETWEEN THE TWO</h1>
-        <img src="../../assets/images/home/diet/hungry.svg" id="hungry" [ngsReveal]="{ reset: true, delay: 200 }"  class="item">
 
         <div id="parallaxdiet">
+                <div class="layer" data-depth="0.25">
+                        <img src="../../assets/images/home/diet/hungry.svg" class="hungry svgshadow" [ngsReveal]="{ reset: true, delay: 200 }" >
+                </div>
+                <div class="layer" data-depth="0.20">
+                        <img src="../../assets/images/home/diet/hungryeyes2.svg" class="hungry" [ngsReveal]="{ reset: true, delay: 200 }" >
+                </div>
+                <div class="layer" data-depth="0.18">
+                        <img src="../../assets/images/home/diet/hungryeyes1.svg" class="hungry" [ngsReveal]="{ reset: true, delay: 200 }" >
+                </div>
             <div class="layer" data-depth="0.30">
             <div class="iconoverlay" id="food1">
                     <img src="../../assets/images/home/diet/healthy/banana.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
@@ -84,7 +92,7 @@
                 <img src="../../assets/images/home/diet/healthy/bread.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
             </div>
             </div>
-            <div class="layer" data-depth="0.60">
+            <div class="layer" data-depth="0.50">
             <div class="iconoverlay" id="food3">
                 <img src="../../assets/images/home/diet/healthy/cucumber.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
             </div>
@@ -99,12 +107,32 @@
                     <img src="../../assets/images/home/diet/healthy/pepper.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
                 </div>
             </div>
-            <div class="layer" data-depth="0.60">
+            <div class="layer" data-depth="0.50">
                 <div class="iconoverlay" id="food6">
                     <img src="../../assets/images/home/diet/healthy/tuna.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
                 </div>
             </div>
+            <div class="layer" data-depth="0.40">
+                    <div class="iconoverlay" id="food13">
+                        <img src="../../assets/images/home/diet/healthy/apple.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                    </div>
+                </div>
+            <div class="layer" data-depth="0.40">
+                <div class="iconoverlay" id="food14">
+                    <img src="../../assets/images/home/diet/healthy/omelette.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                </div>
+            </div>
+            <div class="layer" data-depth="0.50">
+                    <div class="iconoverlay" id="food15">
+                        <img src="../../assets/images/home/diet/healthy/whey.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                    </div>
+            </div>
             <div class="layer" data-depth="0.30">
+                    <div class="iconoverlay" id="food16">
+                        <img src="../../assets/images/home/diet/healthy/watermelon.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                    </div>
+            </div>
+                    <div class="layer" data-depth="0.30">
                 <div class="iconoverlay" id="food7">
                         <img src="../../assets/images/home/diet/fast/burger.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
                 </div>
@@ -135,7 +163,27 @@
                         <img src="../../assets/images/home/diet/fast/pizza.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
                     </div>
                 </div>
-    </div>
+                <div class="layer" data-depth="0.60">
+                        <div class="iconoverlay" id="food17">
+                            <img src="../../assets/images/home/diet/fast/beer.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                        </div>
+                </div>
+                <div class="layer" data-depth="0.60">
+                        <div class="iconoverlay" id="food18">
+                            <img src="../../assets/images/home/diet/fast/mojito.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                        </div>
+                </div>
+                <div class="layer" data-depth="0.60">
+                        <div class="iconoverlay" id="food19">
+                            <img src="../../assets/images/home/diet/fast/popcorn.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                        </div>
+                </div>
+                <div class="layer" data-depth="0.60">
+                        <div class="iconoverlay" id="food20">
+                            <img src="../../assets/images/home/diet/fast/taco.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                        </div>
+                </div>
+           </div>
 
     </div>
 
@@ -145,8 +193,8 @@
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="benefit2">WORKING</h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="benefit3">OUT!</h1>
         <div id="parallaxmodel">
-            <div class="layer" data-depth="0.20"><img src="../../assets/images/home/features/featurewomen.svg" id="benefitfemale" [ngsReveal]="{ reset: true, delay: 200 }"  ></div>
-            <div class="layer" data-depth="0.30"><img src="../../assets/images/home/features/featuremen.svg" id="benefitmale" [ngsReveal]="{ reset: true, delay: 200 }"  ></div>
+            <div class="layer" data-depth="0.20"><img src="../../assets/images/home/features/featurewomen.svg" id="benefitfemale" [ngsReveal]="{ reset: true, delay: 200 }" class="svgshadow" ></div>
+            <div class="layer" data-depth="0.30"><img src="../../assets/images/home/features/featuremen.svg" id="benefitmale" [ngsReveal]="{ reset: true, delay: 200 }" class="svgshadow" ></div>
             </div>
             <div id="benefiticons">
             <div id="parallaxicons">
@@ -192,7 +240,7 @@
     </div>
 
 
-<div class="container-fluid section" id="footer" [ngsRevealSet]="{ reset:true }" [ngsInterval]="200" [ngsSelector]="'.diettitle'">
+<div class="container-fluid section" id="footer" [ngsReveal]="{ reset: true}">
         <h1 class="adjustmenttext"></h1>
         <img src="../../assets/images/home/footer.svg" id="footersvg">
 </div>
