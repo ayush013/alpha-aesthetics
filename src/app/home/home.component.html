@@ -1,7 +1,40 @@
-<!-- SMOOTH SCROLL, INTERNAL PAGINATION, SCROLL REVEAL, PARALLAX, TYPE JS, SdivDE OUT, SCROLL DOWN BUTTON-->
+<!-- SMOOTH SCROLL, INTERNAL PAGINATION SLIDE OUT-->
 <div id="parallaxdoodle">
 <div class="layer" data-depth="0.40"><div id="doodlelayer"></div></div>
 </div>
+
+        
+    <!--Modal: Login-->
+    <div mdbModal #login="mdb-modal" class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog cascading-modal" role="document">
+                <!--Content-->
+                <div class="modal-content">
+    
+                    <!--Header-->
+                    <div class="modal-header gradient5 white-text waves-light" mdbWavesEffect>
+                        <h4 class="title"><i class="fa fa-sign-in"></i> LOGIN TO CONTINUE</h4>
+                        <button type="button" class="close waves-light" data-dismiss="modal" aria-label="Close" (click)="login.hide()">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        
+                        <a href="#" class="btn btn-block btn-primary waves-light" style="margin-bottom: 2rem;" mdbWavesEffect>
+                            <i class="fa fa-facebook"></i>
+                            Login with facebook
+                        </a>
+                        <a href="#" class="btn btn-block btn-danger waves-light" mdbWavesEffect>
+                            <i class="fa fa-google-plus"></i>
+                            Login with google
+                        </a>
+    
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+        <!--Modal-->
 
     <div class="container section" id="landing" [ngsRevealSet]="{ reset:true }" [ngsInterval]="500" [ngsSelector]="'.item'">
         <h1 class="adjustmenttext"></h1>
@@ -10,13 +43,15 @@
         <h1 id="landingtitle1" class="item">ALPHA</h1>
         <h1 id="landingtitle2" class="item">AESTHETICS</h1>
         <h1 id="landingquotes" class="item"></h1>
-        <a (cdivck)="login.show()" mdbWavesEffect class="loginbtn item" id="loginbtn">
+        <a (click)="login.show()" mdbWavesEffect class="loginbtn item" id="loginbtn">
             GET STARTED
         <span class="border-left"></span>
         <span class="border-top"></span>
         <span class="border-bottom"></span>
         <span class="border-right"></span>
         </a>
+
+
         
         <span class="scroll-btn">
             <a href="#about">
@@ -28,40 +63,6 @@
             <p>SCROLL DOWN</p>  
         </span>
     </div>
-
-
-    <!--Modal: Login-->
-    <div mdbModal #login="mdb-modal" class="modal fade" id="modallogin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog cascading-modal" role="document">
-            <!--Content-->
-            <div class="modal-content">
-
-                <!--Header-->
-                <div class="modal-header gradient1 white-text waves-divght" mdbWavesEffect>
-                    <h4 class="title"><i class="fa fa-sign-in"></i> LOGIN TO CONTINUE</h4>
-                    <button type="button" class="close waves-divght" data-dismiss="modal" aria-label="Close" (cdivck)="login.hide()">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <!--Body-->
-                <div class="modal-body">
-                    
-                    <a href="#" class="btn btn-block btn-primary waves-divght" style="margin-bottom: 2rem;" mdbWavesEffect>
-                        <i class="fa fa-facebook"></i>
-                        Login with facebook
-                    </a>
-                    <a href="#" class="btn btn-block btn-danger waves-divght" mdbWavesEffect>
-                        <i class="fa fa-google-plus"></i>
-                        Login with google
-                    </a>
-
-                </div>
-            </div>
-            <!--/.Content-->
-        </div>
-    </div>
-    <!--Modal: Contact form-->
-
 
     <div class="container section" id="dieting" [ngsRevealSet]="{ reset:true }" [ngsInterval]="200" [ngsSelector]="'.diettitle'">
             <h1 class="adjustmenttext"></h1>
@@ -116,4 +117,9 @@
         </div>
      </div>
     </div>
-    </div>
+ </div>
+
+<div class="container-fluid section" id="footer" [ngsRevealSet]="{ reset:true }" [ngsInterval]="200" [ngsSelector]="'.diettitle'">
+        <h1 class="adjustmenttext"></h1>
+        <img src="../../assets/images/home/footer.svg" id="footersvg">
+</div>
