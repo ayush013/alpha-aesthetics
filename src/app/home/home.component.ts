@@ -15,16 +15,20 @@ export class HomeComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
-  benefits = ['Enhance Mood','Reduce Stress','Become Sexy','Get Stronger','Improve Heart Health','Become Confident'];
-
   ngOnInit() {
     this.titleService.setTitle(this.route.snapshot.data['title']);
+
     var scene1 = document.getElementById('parallaxdoodle');
     var parallaxInstance1 = new Parallax(scene1);
+
     var scene2 = document.getElementById('parallaxicons');
     var parallaxInstance2 = new Parallax(scene2);
+
     var scene3 = document.getElementById('parallaxmodel');
     var parallaxInstance3 = new Parallax(scene3);
+
+    var scene4 = document.getElementById('parallaxdiet');
+    var parallaxInstance4 = new Parallax(scene4);
 
     var typed = new Typed("#landingquotes", {
       strings: [

@@ -1,5 +1,5 @@
 <div class="row adjustment">
-    <div class="col-md-4 col-12" *ngFor="let workoutdata of workoutarray; let i= index" [ngsReveal]="{delay: i*200 }" >
-      <app-workoutcard [workoutObj]="workoutdata"></app-workoutcard>
+    <div class="col-md-4 col-12 align-items-stretch d-flex" *ngFor="let workoutdata of workoutarray; let i= index" [ngsReveal]="{delay: i*200 }" >
+      <app-workoutcard class="d-flex" [workoutObj]="workoutdata"></app-workoutcard>
     </div>
 </div>

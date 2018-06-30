@@ -54,7 +54,8 @@ nav {
 
 #landingquotes {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
@@ -264,18 +265,18 @@ nav {
     font-size: 6em;
 }
 
-#benefitmale, #benefitfemale {
+#benefitmale, #benefitfemale, #benefitsurface {
     position: absolute;
     height: 70vh;
 }
 #benefitfemale {
-    left: 46vh;
+    left: 30vw;
 }
 #benefitmale {
-    left: 72vh;
+    left: 40vw;
 }
 
-#parallaxmodel, #parallaxicons {
+#parallaxmodel, #parallaxicons, #parallaxdiet {
     height: 70vh;
     top: 20vh;
     width: 100vw;
@@ -289,9 +290,19 @@ nav {
 
 .iconoverlay {
     position: absolute;
-    width: 5vw;
-    border-radius: 50%;
     transition: 0.5s ease-in-out;
+}
+
+@keyframes bounce{
+	0%{transform: translateY(-5%);}
+	50%{transform: translateY(5%);}
+	100%{transform: translateY(-5%);}
+}
+
+@keyframes bounce2{
+	0%{transform: translateY(5%);}
+	50%{transform: translateY(-5%);}
+	100%{transform: translateY(5%);}
 }
 
 .iconoverlay:hover {
@@ -300,32 +311,49 @@ nav {
 
 #benefiticon1 {
     top: 2vh;
-    left: 14vw;
+    left: 24vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #benefiticon2 {
     top: 28vh;
-    left: 3vw;
+    left: 13vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 #benefiticon3 {
     top: 54vh;
-    left: 10vw;
+    left: 20vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
+
 #benefiticon4 {
     top: 10vh;
-    left: 62vw;
+    left: 72vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 #benefiticon5 {
     top: 32vh;
-    left: 70vw;
+    left: 80vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 #benefiticon6 {
     top: 58vh;
-    left: 61vw;
+    left: 71vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 #footersvg {
     width: 100vw;
+    bottom: 0;
+    left: 0;
+}
+
+#benefits {
+    min-height: 100vh;
+    background: url(../../assets/images/home/features/featuresurface.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
 }
 
 #footer {
@@ -333,6 +361,107 @@ nav {
     padding: 0;
 }
 
-#benefits {
-    min-height: 100vh;
+.icondesc {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.benefiticon {
+    display: block;
+    margin: 0 auto;
+    width: 7vw;
+    filter: drop-shadow( 0px 0px 7px rgba(0, 0, 0, 0.6) );
+}
+
+#fullpage {
+    position: relative;
+}
+
+#food1 {
+    top: 2vh;
+    left: 24vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food2 {
+    top: 18vh;
+    left: 13vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+#food3 {
+    top: 24vh;
+    left: 20vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food4 {
+    top: 34vh;
+    left: 13vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+
+#food5 {
+    top: 44vh;
+    left: 25vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food6 {
+    top: 54vh;
+    left: 15vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+
+
+#food7 {
+    top: 2vh;
+    left: 74vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food8 {
+    top: 18vh;
+    left: 80vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+#food9 {
+    top: 24vh;
+    left: 70vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food10 {
+    top: 34vh;
+    left: 75vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+
+#food11 {
+    top: 44vh;
+    left: 84vw;
+	animation:bounce 1500ms ease-out 0ms infinite !important;
+}
+
+#food12 {
+    top: 54vh;
+    left: 70vw;
+	animation:bounce2 1500ms ease-out 0ms infinite !important;
+}
+
+
+#hungry {
+    height: 50vh;
+    display: block;
+    margin: 0 auto;
+}
+
+#dieting {
+        min-height: 100vh;
+        background: url(../../assets/images/home/diet/dietsurface.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    
 }
