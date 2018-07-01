@@ -289,56 +289,51 @@ nav {
 
 .iconoverlay {
     position: absolute;
-    transition: 0.5s ease-in-out;
 }
 
-@keyframes bounce{
-	0%{transform: translateY(-5%);}
-	50%{transform: translateY(5%);}
-	100%{transform: translateY(-5%);}
-}
+// @-webkit-keyframes bounce{
+// 	0%{transform: translateY(-5%);}
+// 	50%{transform: translateY(5%);}
+// 	100%{transform: translateY(-5%);}
+// }
 
-@keyframes bounce2{
-	0%{transform: translateY(5%);}
-	50%{transform: translateY(-5%);}
-	100%{transform: translateY(5%);}
-}
-
-.iconoverlay:hover {
-    transform: scale(1.3);
-}
+// @-webkit-keyframes bounce2{
+// 	0%{transform: translateY(5%);}
+// 	50%{transform: translateY(-5%);}
+// 	100%{transform: translateY(5%);}
+// }
 
 #benefiticon1 {
     top: 12vh;
     left: 24vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #benefiticon2 {
     top: 38vh;
     left: 13vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 #benefiticon3 {
     top: 64vh;
     left: 20vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #benefiticon4 {
     top: 20vh;
     left: 72vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 #benefiticon5 {
     top: 42vh;
     left: 80vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 #benefiticon6 {
     top: 68vh;
     left: 71vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 #footersvg {
@@ -381,119 +376,119 @@ nav {
 #food1 {
     top: 10vh;
     left: 24vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food2 {
     top: 28vh;
     left: 13vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 #food3 {
     top: 34vh;
     left: 20vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food4 {
     top: 44vh;
     left: 13vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food5 {
     top: 54vh;
     left: 25vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food6 {
     top: 64vh;
     left: 15vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 
 #food7 {
     top: 12vh;
     left: 70vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food8 {
     top: 28vh;
     left: 80vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 #food9 {
     top: 34vh;
     left: 70vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food10 {
     top: 44vh;
     left: 75vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food11 {
     top: 54vh;
     left: 84vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food12 {
     top: 64vh;
     left: 70vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food13 {
     top: 11vh;
     left: 14vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food14 {
     top: 25vh;
     left: 5vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food15 {
     top: 61vh;
     left: 5vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food16 {
     top: 71vh;
     left: 28vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food17 {
     top: 15vh;
     left: 85vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food18 {
     top: 35vh;
     left: 90vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 #food19 {
     top: 70vh;
     left: 80vw;
-	animation:bounce2 1500ms ease-out 0ms infinite !important;
+
 }
 #food20 {
     top: 75vh;
     left: 90vw;
-	animation:bounce 1500ms ease-out 0ms infinite !important;
+
 }
 
 

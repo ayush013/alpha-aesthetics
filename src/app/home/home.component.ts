@@ -16,6 +16,10 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
   x: any;
 
+  MoveDown() {
+    this.x.moveSectionDown();
+  }
+
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
   ngOnInit() {
@@ -53,8 +57,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
    this.x = new fullpage('#fullpage', {
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         autoScrolling:true,
-        scrollBar: true
-  
+        scrollBar: true,
+        scrollingSpeed: 300
       });
     
     console.log(this.x);
