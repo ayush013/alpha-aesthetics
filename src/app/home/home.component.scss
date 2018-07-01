@@ -526,3 +526,28 @@ nav {
     font-size: 2em;
     font-weight: 700;
 }
+
+
+.card.card-cascade.narrower .view.view-cascade {
+    margin-left: 30% !important;
+    margin-right: 30% !important;
+    margin-top: -6rem !important;
+}
+
+.card.card-cascade.narrower {
+    margin-top: 0 !important;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+div.view {
+    border-radius: 50% !important; 
+}
+
+.card .card-body .card-text {
+    color: #000000;
+}
+
+.adjustmenttext3 {
+    padding-top: 7vh;
+}

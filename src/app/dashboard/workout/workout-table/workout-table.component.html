@@ -14,33 +14,55 @@
 
       <!-- Title -->
       <h1 class="card-title">{{workoutObj.title}}</h1>
-      
-        <div class="card-text" *ngFor="let day of workoutObj.workout; let i=index">
-          <h2>Day {{i+1}} - </h2>
-          <div class="table-responsive">
-        <table class="table table-hover table-striped" >
-            <thead class="text-white" [ngClass]="'gradient'+(i+1)">
-                <tr>
-                    <th>S. No.</th>
-                    <th>Exercise</th>
-                    <th>No. of Sets</th>
-                    <th>No. of Reps</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let exercises of day; let j=index">
-                      <td *ngIf="exercises.exercise === 'Rest Day'; else work" colspan="4" class="text-center">{{exercises.exercise}}</td>
-                  <ng-template #work>
-                    <td scope="row">{{j+1}}</td>
-                    <td>{{exercises.exercise}}</td>
-                    <td>{{exercises.sets}}</td>
-                    <td>{{exercises.reps}}</td>
-                  </ng-template>
-                </tr>
-            </tbody>
-        </table>
+      <hr>
+      <p class="card-text">
+        {{workoutObj.description}}
+      </p>
+      <hr>
+        <div class="card-text" *ngFor="let workoutarray of workoutObj.workout; let i=index">
+          <div *ngFor="let dayarray of workoutarray; let j= index;"> 
+            <ng-container *ngIf="dayarray.name; else elseTemplate">
+                <h2>Day {{i+1}} - {{dayarray.name}} </h2>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped" >
+                        <thead class="text-white" [ngClass]="'gradient'+(i+1)">
+                            <tr>
+                                <th>S. No.</th>
+                                <th>Exercise</th>
+                                <th>No. of Sets</th>
+                                <th>No. of Reps</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let exercises of dayarray; let k=index">
+                                  <td *ngIf="exercises.exercise === 'Rest Day'; else work" colspan="4" class="text-center">{{exercises.exercise}}</td>
+                              <ng-template #work>
+                                <td scope="row">{{k+1}}</td>
+                                <td>{{exercises.exercise}}</td>
+                                <td>{{exercises.sets}}</td>
+                                <td>{{exercises.reps}}</td>
+                              </ng-template>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+            </ng-template>
+
       </div>
+
       </div>
+      <hr>
+      <p class="card-text">
+          <b>IMPORTANT NOTE:</b> It is advised to do a 10 minute warm-up before starting the workouts.
+          Warm up may include 5 minute walking on treadmill, pushups, pullups/chinups, internal roations, etc.
+          If you have a cardio session for the day, <b>Do cardio session after workout!</b>.
+          <b>On rest days</b>, It is advised to follow same diet regime as on training days. 
+          Maintain an active lifestyle for best results.
+          Keep in mind that workout alone is not sufficient for achieving goals, A proper goal oriented diet and meal plan is recommended to be followed.
+          Please refer to our Calorie Calculator and Meal Plan Generator for the above.
+        </p>
     </div>
   
   </div>

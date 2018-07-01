@@ -31,10 +31,109 @@ blogarray = [
 ];
 
 workoutarray = [
-  { route: 'fullbody', workout: [[{exercise:'Squat', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}],[{exercise:'OHP', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}]], title: 'Full Body Workout', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'},
-  { route: 'fullbody', workout: [[{exercise:'Squat', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}],[{exercise:'Rest Day'} ],[{exercise:'Squat', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}],[{exercise:'OHP', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}]], title: 'Full Body Workout', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'},
-  { route: 'fullbody', workout: [[{exercise:'Squat', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}],[{exercise:'OHP', sets:'3', reps: '8-12'}, {exercise:'Row', sets:'3', reps: '8-12'}, {exercise:'Deadlift', sets:'3', reps: '8-12'}, {exercise:'Plank', sets:'3', reps: '8-12'}]], title: 'Full Body Workout', features: ['easy','3 times week','beginner'], image: 'https://surgeryxchange.com/blog/wp-content/uploads/2017/08/9ab6f4588d7051a0698e9b1b89386e49.jpg'}
-];
+  {
+    route: 'beginner',
+    workout: [
+    [ {name: 'Push A'}, 
+    [{exercise:'Barbell Bench Press', sets:'3', reps: '8-12'}, {exercise:'Machine Chest Fly', sets:'3', reps: '10-12'}, {exercise:'Dumbbell Shoulder Press', sets:'3', reps: '8-12'}, {exercise:'Dumbbell Side Raise', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Tricep Extension', sets:'5', reps: '10-15'}]
+    ],
+    [ {name: 'Pull A + Obliques'}, 
+    [{exercise:'Barbell Deadlift', sets:'3', reps: '6-8'}, {exercise:'Single Arm Dumbbell Row', sets:'3', reps: '8-12'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Barbell Shrugs', sets:'3', reps: '10-15'}, {exercise:'Barbell Bicep Curl', sets:'5', reps: '10-15'}, {exercise:'Dumbbell Side Bend', sets:'4', reps: '10-15'}]
+    ],
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
+    ],
+    [ {name: 'Push B'}, 
+    [{exercise:'Barbell Shoulder Press', sets:'3', reps: '8-10'}, {exercise:'Incline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Decline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Cable Tricep Pushdown', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Skullcrusher', sets:'3', reps: '10-15'}]
+    ],
+    [ {name: 'Pull B'}, 
+    [{exercise:'Pullups', sets:'3', reps: '8-10'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Cable Face Pulls', sets:'3', reps: '8-12'}, {exercise:'Preacher Curl', sets:'3', reps: '10-15'}, {exercise:'Reverse Cable Curl', sets:'3', reps: '10-15'}]
+    ],
+    [ {name: 'Legs and Abs'}, 
+    [{exercise:'Barbell Squat', sets:'3', reps: '8-10'}, {exercise:'Machine Leg Press', sets:'3', reps: '8-12'}, {exercise:'Romanian Deadlift', sets:'3', reps: '8-12'}, {exercise:'Machine Leg Curl', sets:'3', reps: '8-12'}, {exercise:'Machine Calf Press', sets:'5', reps: '10-15'}, {exercise:'Cable Crunch', sets:'4', reps: '10-15'}]
+    ],
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
+    ]
+  ],
+    title: `Beginner's Workout`, 
+    features: ['Specially Focused on Beginners','Fundamentals of Weight Training','5 times Week','Build Strength/Muscle and Lose Fat'], 
+    description: `This workout program is specially crafted for people who are just beginning their journey. 
+    Congratulations for taking your first step!
+    This program will lay a foundation about basics of weight training.
+    This is 5 days a week workout program with moderate intensity.
+    Focus on proper form in all exercises as it is the basic foundation needed for fitness journey.`,
+    image: '../../assets/images/dashboard/beginnersworkout.svg'
+  },
+  {
+    route: 'fullbody',
+    workout: [
+    [ {name: 'Push A'}, 
+    [{exercise:'Barbell Bench Press', sets:'3', reps: '8-12'}, {exercise:'Machine Chest Fly', sets:'3', reps: '10-12'}, {exercise:'Dumbbell Shoulder Press', sets:'3', reps: '8-12'}, {exercise:'Dumbbell Side Raise', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Tricep Extension', sets:'5', reps: '10-15'}]
+    ],
+    [ {name: 'Pull A + Obliques'}, 
+    [{exercise:'Barbell Deadlift', sets:'3', reps: '6-8'}, {exercise:'Single Arm Dumbbell Row', sets:'3', reps: '8-12'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Barbell Shrugs', sets:'3', reps: '10-15'}, {exercise:'Barbell Bicep Curl', sets:'5', reps: '10-15'}, {exercise:'Dumbbell Side Bend', sets:'4', reps: '10-15'}]
+    ],
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
+    ],
+    [ {name: 'Push B'}, 
+    [{exercise:'Barbell Shoulder Press', sets:'3', reps: '8-10'}, {exercise:'Incline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Decline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Cable Tricep Pushdown', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Skullcrusher', sets:'3', reps: '10-15'}]
+    ],
+    [ {name: 'Pull B'}, 
+    [{exercise:'Pullups', sets:'3', reps: '8-10'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Cable Face Pulls', sets:'3', reps: '8-12'}, {exercise:'Preacher Curl', sets:'3', reps: '10-15'}, {exercise:'Reverse Cable Curl', sets:'3', reps: '10-15'}]
+    ],
+    [ {name: 'Legs and Abs'}, 
+    [{exercise:'Barbell Squat', sets:'3', reps: '8-10'}, {exercise:'Machine Leg Press', sets:'3', reps: '8-12'}, {exercise:'Romanian Deadlift', sets:'3', reps: '8-12'}, {exercise:'Machine Leg Curl', sets:'3', reps: '8-12'}, {exercise:'Machine Calf Press', sets:'5', reps: '10-15'}, {exercise:'Cable Crunch', sets:'4', reps: '10-15'}]
+    ],
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
+    ]
+  ],
+    title: `Full Body Workout`, 
+    features: ['Specially Focused on Beginners','Fundamentals of Weight Training','5 times Week','Build Strength/Muscle and Lose Fat'], 
+    description: `This workout program is specially crafted for people who are just beginning their journey. 
+    Congratulations for taking your first step!
+    This program will lay a foundation about basics of weight training.
+    This is 5 days a week workout program with moderate intensity.
+    Focus on proper form in all exercises as it is the basic foundation needed for fitness journey.`,
+    image: '../../assets/images/dashboard/fullbodyworkout.svg'
+  },
+  {
+    route: 'women',
+    workout: [
+    [ {name: 'Push A'}, 
+    [{exercise:'Barbell Bench Press', sets:'3', reps: '8-12'}, {exercise:'Machine Chest Fly', sets:'3', reps: '10-12'}, {exercise:'Dumbbell Shoulder Press', sets:'3', reps: '8-12'}, {exercise:'Dumbbell Side Raise', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Tricep Extension', sets:'5', reps: '10-15'}]
+    ],
+    [ {name: 'Pull A + Obliques'}, 
+    [{exercise:'Barbell Deadlift', sets:'3', reps: '6-8'}, {exercise:'Single Arm Dumbbell Row', sets:'3', reps: '8-12'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Barbell Shrugs', sets:'3', reps: '10-15'}, {exercise:'Barbell Bicep Curl', sets:'5', reps: '10-15'}, {exercise:'Dumbbell Side Bend', sets:'4', reps: '10-15'}]
+    ],
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
+    ],
+    [ {name: 'Push B'}, 
+    [{exercise:'Barbell Shoulder Press', sets:'3', reps: '8-10'}, {exercise:'Incline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Decline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Cable Tricep Pushdown', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Skullcrusher', sets:'3', reps: '10-15'}]
+    ],
+    [ {name: 'Pull B'}, 
+    [{exercise:'Pullups', sets:'3', reps: '8-10'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Cable Face Pulls', sets:'3', reps: '8-12'}, {exercise:'Preacher Curl', sets:'3', reps: '10-15'}, {exercise:'Reverse Cable Curl', sets:'3', reps: '10-15'}]
+    ],
+    [ {name: 'Legs and Abs'}, 
+    [{exercise:'Barbell Squat', sets:'3', reps: '8-10'}, {exercise:'Machine Leg Press', sets:'3', reps: '8-12'}, {exercise:'Romanian Deadlift', sets:'3', reps: '8-12'}, {exercise:'Machine Leg Curl', sets:'3', reps: '8-12'}, {exercise:'Machine Calf Press', sets:'5', reps: '10-15'}, {exercise:'Cable Crunch', sets:'4', reps: '10-15'}]
+    ],
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
+    ]
+  ],
+    title: `Women's Workout`, 
+    features: ['Specially Focused on Beginners','Fundamentals of Weight Training','5 times Week','Build Strength/Muscle and Lose Fat'], 
+    description: `This workout program is specially crafted for people who are just beginning their journey. 
+    Congratulations for taking your first step!
+    This program will lay a foundation about basics of weight training.
+    This is 5 days a week workout program with moderate intensity.
+    Focus on proper form in all exercises as it is the basic foundation needed for fitness journey.`,
+    image: '../../assets/images/dashboard/womenworkout.svg'
+  },
+ ];
 
 calarray = [
   { route: 'bulking', title: 'Gain Weight', features: ['Caloric Surplus','Gain Muscle and Strength','Suitable for Lean Bulking'], image: '../../assets/images/dashboard/gainweight.svg'},
