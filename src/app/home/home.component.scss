@@ -1,6 +1,5 @@
 #landing {
-min-height: 100vh;
-text-align: center;
+    text-align: center;
 }
 
 .section {
@@ -252,7 +251,6 @@ nav {
 }
 
 #benefit1 {
-    margin-top: 20vh;
     font-size: 2.6em;
     font-weight: 400;
 }
@@ -265,9 +263,10 @@ nav {
     font-size: 6em;
 }
 
-#benefitmale, #benefitfemale, #benefitsurface {
+#benefitmale, #benefitfemale {
     position: absolute;
     height: 70vh;
+    top: 30vh;
 }
 #benefitfemale {
     left: 30vw;
@@ -277,8 +276,8 @@ nav {
 }
 
 #parallaxmodel, #parallaxicons, #parallaxdiet {
-    height: 70vh;
-    top: 20vh;
+    height: 100vh;
+    top: 0;
     width: 100vw;
     position: absolute;
     left: 0;
@@ -310,34 +309,34 @@ nav {
 }
 
 #benefiticon1 {
-    top: 2vh;
+    top: 12vh;
     left: 24vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #benefiticon2 {
-    top: 28vh;
+    top: 38vh;
     left: 13vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 #benefiticon3 {
-    top: 54vh;
+    top: 64vh;
     left: 20vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #benefiticon4 {
-    top: 10vh;
+    top: 20vh;
     left: 72vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 #benefiticon5 {
-    top: 32vh;
+    top: 42vh;
     left: 80vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 #benefiticon6 {
-    top: 58vh;
+    top: 68vh;
     left: 71vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
@@ -380,119 +379,119 @@ nav {
 }
 
 #food1 {
-    top: 2vh;
+    top: 10vh;
     left: 24vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food2 {
-    top: 18vh;
+    top: 28vh;
     left: 13vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 #food3 {
-    top: 24vh;
+    top: 34vh;
     left: 20vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food4 {
-    top: 34vh;
+    top: 44vh;
     left: 13vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 #food5 {
-    top: 44vh;
+    top: 54vh;
     left: 25vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food6 {
-    top: 54vh;
+    top: 64vh;
     left: 15vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 
 #food7 {
-    top: 2vh;
+    top: 12vh;
     left: 70vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food8 {
-    top: 18vh;
+    top: 28vh;
     left: 80vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 #food9 {
-    top: 24vh;
+    top: 34vh;
     left: 70vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food10 {
-    top: 34vh;
+    top: 44vh;
     left: 75vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 #food11 {
-    top: 44vh;
+    top: 54vh;
     left: 84vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food12 {
-    top: 54vh;
+    top: 64vh;
     left: 70vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 #food13 {
-    top: 1vh;
+    top: 11vh;
     left: 14vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food14 {
-    top: 15vh;
+    top: 25vh;
     left: 5vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 #food15 {
-    top: 51vh;
+    top: 61vh;
     left: 5vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food16 {
-    top: 61vh;
+    top: 71vh;
     left: 28vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 #food17 {
-    top: 5vh;
+    top: 15vh;
     left: 85vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 
 #food18 {
-    top: 25vh;
+    top: 35vh;
     left: 90vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
 
 #food19 {
-    top: 60vh;
+    top: 70vh;
     left: 80vw;
 	animation:bounce2 1500ms ease-out 0ms infinite !important;
 }
 #food20 {
-    top: 65vh;
+    top: 75vh;
     left: 90vw;
 	animation:bounce 1500ms ease-out 0ms infinite !important;
 }
@@ -502,7 +501,7 @@ nav {
     width: 30vw;
     display: block;
     position: absolute;
-    top: 27vh;
+    top: 37vh;
     left: 35vw;
     right: 0;
 }
@@ -512,10 +511,13 @@ nav {
 }
 
 #dieting {
-        min-height: 100vh;
         background: url(../../assets/images/home/diet/dietsurface.svg);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50%;
     
+}
+
+.adjustmenttext2 {
+    padding-top: 10vh;
 }

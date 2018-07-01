@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import * as Parallax from 'parallax-js';
 import * as Typed from 'typed.js';
 
 declare var Parallax: any;
+declare var fullpage: any;
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+
+  x: any;
 
   constructor(private route: ActivatedRoute, private titleService: Title) {}
 
@@ -44,8 +47,20 @@ export class HomeComponent implements OnInit {
       loop: true,
       showCursor: false
   });
-
   }
   
+  ngAfterViewInit() {
+   this.x = new fullpage('#fullpage', {
+      licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+        autoScrolling:true,
+        scrollBar: true
+  
+      });
+    
+    console.log(this.x);
+  }
 
+  ngOnDestroy() {
+    this.x.destroy();
+  }
 }

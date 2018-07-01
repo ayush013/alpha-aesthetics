@@ -12,7 +12,7 @@ body::-webkit-scrollbar-track{
   body::-webkit-scrollbar-thumb{background-color:#000000}
   
 body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .adjustment {

@@ -35,8 +35,8 @@
             </div>
         </div>
         <!--Modal-->
-
-    <div class="container section" id="landing" [ngsRevealSet]="{ reset:true }" [ngsInterval]="100" [ngsSelector]="'.item'" [ngsReveal]="{ reset: true}">
+<div id="fullpage">
+    <div class="container section" [ngsReveal]="{ reset: true }" id="landing" [ngsRevealSet]="{ reset:true }" [ngsInterval]="100" [ngsSelector]="'.item'">
         <h1 class="adjustmenttext"></h1>
         <img src="../../assets/images/LOGO-small.svg" id="landinglogo" class="item">
         <h1 id="landingtitle1" class="item">ALPHA</h1>
@@ -64,8 +64,8 @@
     </div>
     
 
-    <div class="container-fluid section" id="dieting" [ngsReveal]="{ reset: true}">
-            <h1 class="adjustmenttext"></h1>
+    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="dieting">
+        <h1 class="adjustmenttext2"></h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet1">DIETING</h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet2">IS ALL ABOUT</h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet3">BALANCE</h1>
@@ -187,8 +187,8 @@
 
     </div>
 
-    <div class="container-fluid section" id="benefits" [ngsReveal]="{ reset: true}">
-       
+    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="benefits" >
+       <h1 class="adjustmenttext2"></h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="benefit1">BENEFITS OF</h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="benefit2">WORKING</h1>
         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="benefit3">OUT!</h1>
@@ -240,7 +240,8 @@
     </div>
 
 
-<div class="container-fluid section" id="footer" [ngsReveal]="{ reset: true}">
-        <h1 class="adjustmenttext"></h1>
+<div class="container-fluid section" [ngsReveal]="{ reset: true }" id="footer" >
         <img src="../../assets/images/home/footer.svg" id="footersvg">
+</div>
+
 </div>
