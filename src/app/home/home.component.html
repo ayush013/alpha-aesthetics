@@ -36,6 +36,7 @@
         </div>
         <!--Modal-->
 <div id="fullpage">
+
     <div class="container section" [ngsReveal]="{ reset: true }" id="landing" [ngsRevealSet]="{ reset:true }" [ngsInterval]="100" [ngsSelector]="'.item'">
         <h1 class="adjustmenttext"></h1>
         <img src="../../assets/images/LOGO-small.svg" id="landinglogo" class="item">
@@ -61,6 +62,15 @@
             </a>
             <p>SCROLL DOWN</p>  
         </span>
+    </div>
+
+    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="story" >
+            <h1 class="adjustmenttext2"></h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">THE </h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story1">ALPHA</h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story2">AESTHETICS</h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">STORY</h1>
+
     </div>
     
 
@@ -240,8 +250,8 @@
     </div>
 
 
-<div class="container-fluid section" [ngsReveal]="{ reset: true }" id="footer" >
-        <img src="../../assets/images/home/footer.svg" id="footersvg">
-</div>
+    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="footer" >
+            <img src="../../assets/images/home/footer.svg" id="footersvg">
+    </div>
 
 </div>
