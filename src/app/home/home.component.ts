@@ -12,7 +12,7 @@ declare var fullpage: any;
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy {
 
   x: any;
 
@@ -51,9 +51,6 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
       loop: true,
       showCursor: false
   });
-  }
-  
-  ngAfterViewInit() {
    this.x = new fullpage('#fullpage', {
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         autoScrolling:true,
@@ -61,8 +58,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         scrollingSpeed: 300
       });
     
-    console.log(this.x);
-  }
+    }
 
   ngOnDestroy() {
     this.x.destroy();

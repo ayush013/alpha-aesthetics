@@ -64,7 +64,7 @@
         </span>
     </div>
 
-    <div class="container section" [ngsReveal]="{ reset: true }" id="story" >
+    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="story" >
             <h1 class="adjustmenttext3"></h1>
             <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">THE </h1>
             <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story1">ALPHA</h1>
@@ -75,8 +75,8 @@
                         <div class="card card-cascade narrower" [ngsReveal]="{ reset: true, delay: 200 }">
 
                                 <!-- Card image -->
-                                <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                                  <img class="card-img-top" src="../../assets/images/home/ayush.jpg" alt="Ayush">
+                                <div class="view view-cascade overlay waves-light storycard" mdbWavesEffect>
+                                  <img class="card-img-top" src="../../assets/images/home/story/ayush.jpg" alt="Ayush">
                                   <a href="https://www.instagram.com/alphaayush" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                   </a>
@@ -93,8 +93,8 @@
                                     I have learnt many things in the process, and more importantly how to build a positive mindset towards life.
                                     You have to fall in love with the process, not the end result.
                                     With Alpha Aesthetics my aim is to help you kickstart your journey towards health and fitness.
-                                    Every content that'll be shared through Alpha Aesthetics is based on latest scientific literature and most applied methods of training and nutrition.
-                                    It doesn't actually matter WHY you're here. I just want you to have a good time and become part of a positive community.
+                                    Every service provided by Alpha Aesthetics is based on latest scientific literature and most applied methods of training and nutrition.
+                                    So become part of a positive community.
                                     <b>Let's make a difference together.</b> 
                                 </p>
                                 <!-- Button -->
@@ -106,8 +106,8 @@
                         <div class="card card-cascade narrower" [ngsReveal]="{ reset: true, delay: 200 }" >
 
                                 <!-- Card image -->
-                                <div class="view view-cascade overlay waves-light" mdbWavesEffect>
-                                  <img class="card-img-top" src="../../assets/images/home/aviral.jpg" alt="Ayush">
+                                <div class="view view-cascade overlay waves-light storycard" mdbWavesEffect>
+                                  <img class="card-img-top" src="../../assets/images/home/story/aviral.jpg" alt="Ayush">
                                   <a href="https://www.instagram.com/gautam_aviral" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
                                   </a>
@@ -134,7 +134,106 @@
                     </div>
             </div>
     </div>
+
+    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="features" >
+        
+            <h1 class="adjustmenttext3"></h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">WHAT </h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story1">ALPHA</h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story2">AESTHETICS</h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">OFFERS TO YOU</h1>
+
+        
+        <div class="row">
+            <div class="col"></div>
+             <div class="col-md-6">
+            <!--Carousel Wrapper-->
+            <div class="laptop">
+            <mdb-carousel class="carousel slide" [isControls]="false" [animation]="'slide'" [interval]="1000" >
+                    <!--First slide-->
+                    <mdb-slide>
+                        <div class="view">
+                            <img class="d-block w-100" src="../../assets/images/home/features/weight.jpg" alt="First slide">
+                            <div class="waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-slide>
+                    <!--/First slide-->
+                    <!--Second slide-->
+                    <mdb-slide>
+                        <div class="view">
+                            <img class="d-block w-100" src="../../assets/images/home/features/weight.jpg" alt="Second slide">
+                            <div class="waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-slide>
+                    <!--/Second slide-->
+                    <!--Third slide-->
+                    <mdb-slide>
+                        <div class="view">
+                            <img class="d-block w-100" src="../../assets/images/home/features/weight.jpg" alt="Third slide">
+                            <div class="waves-light" mdbWavesEffect></div>
+                        </div>
+                    </mdb-slide>
+                    <!--/Third slide-->
+                </mdb-carousel>
+                <!--/.Carousel Wrapper-->
+                </div>
+            </div>
+            <div class="col"></div>
+            </div>
+    </div>
     
+    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="benefits" >
+        <h1 class="adjustmenttext2"></h1>
+         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 100 }" id="benefit1">BENEFITS OF</h1>
+         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="benefit2">WORKING</h1>
+         <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 300 }" id="benefit3">OUT!</h1>
+         <div id="parallaxmodel">
+             <div class="layer" data-depth="0.20"><img src="../../assets/images/home/benefits/benefitwomen.svg" id="benefitfemale" [ngsReveal]="{ reset: true, delay: 200 }" class="svgshadow" ></div>
+             <div class="layer" data-depth="0.30"><img src="../../assets/images/home/benefits/benefitmen.svg" id="benefitmale" [ngsReveal]="{ reset: true, delay: 200 }" class="svgshadow" ></div>
+             </div>
+             <div id="benefiticons">
+             <div id="parallaxicons">
+                 <div class="layer" data-depth="0.30">
+                 <div class="iconoverlay" id="benefiticon1">
+                         <img src="../../assets/images/home/benefits/icons/confident.svg" [ngsReveal]="{ reset: true, delay: 100 }"  class="benefiticon">
+                         <h2 class="icondesc">Become<br>Confident</h2>
+                 </div>
+                 </div>
+ 
+                 <div class="layer" data-depth="0.40">
+                 <div class="iconoverlay" id="benefiticon2">
+                         <img src="../../assets/images/home/benefits/icons/heart.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                         <h2 class="icondesc">Improve<br>Heart<br>Health</h2>
+                 </div>
+                 </div>
+                 <div class="layer" data-depth="0.60">
+                 <div class="iconoverlay" id="benefiticon3">
+                         <img src="../../assets/images/home/benefits/icons/mood.svg" [ngsReveal]="{ reset: true, delay: 300 }"  class="benefiticon">
+                         <h2 class="icondesc">Enhance <br>Mood</h2>
+                 </div>
+                 </div>
+                 <div class="layer" data-depth="0.70">
+                 <div class="iconoverlay" id="benefiticon4">
+                         <img src="../../assets/images/home/benefits/icons/sexy.svg" [ngsReveal]="{ reset: true, delay: 100 }"  class="benefiticon">
+                         <h2 class="icondesc">Become <br> Sexy</h2>
+                 </div>
+                 </div>
+                 <div class="layer" data-depth="0.50">
+                 <div class="iconoverlay" id="benefiticon5">
+                         <img src="../../assets/images/home/benefits/icons/stress.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
+                         <h2 class="icondesc">Reduce<br>Stress</h2>
+                 </div>
+                 </div>
+                 <div class="layer" data-depth="0.20">
+                 <div class="iconoverlay" id="benefiticon6">
+                         <img src="../../assets/images/home/benefits/icons/strong.svg" [ngsReveal]="{ reset: true, delay: 300 }"  class="benefiticon">
+                         <h2 class="icondesc">Become<br>Strong</h2>
+                 </div>
+                 </div>
+         </div>
+      </div>
+     </div>
+ 
 
     <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="dieting">
         <h1 class="adjustmenttext2"></h1>
@@ -259,57 +358,6 @@
 
     </div>
 
-    <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="benefits" >
-       <h1 class="adjustmenttext2"></h1>
-        <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 100 }" id="benefit1">BENEFITS OF</h1>
-        <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="benefit2">WORKING</h1>
-        <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 300 }" id="benefit3">OUT!</h1>
-        <div id="parallaxmodel">
-            <div class="layer" data-depth="0.20"><img src="../../assets/images/home/features/featurewomen.svg" id="benefitfemale" [ngsReveal]="{ reset: true, delay: 200 }" class="svgshadow" ></div>
-            <div class="layer" data-depth="0.30"><img src="../../assets/images/home/features/featuremen.svg" id="benefitmale" [ngsReveal]="{ reset: true, delay: 200 }" class="svgshadow" ></div>
-            </div>
-            <div id="benefiticons">
-            <div id="parallaxicons">
-                <div class="layer" data-depth="0.30">
-                <div class="iconoverlay" id="benefiticon1">
-                        <img src="../../assets/images/home/features/icons/confident.svg" [ngsReveal]="{ reset: true, delay: 100 }"  class="benefiticon">
-                        <h2 class="icondesc">Become<br>Confident</h2>
-                </div>
-                </div>
-
-                <div class="layer" data-depth="0.40">
-                <div class="iconoverlay" id="benefiticon2">
-                        <img src="../../assets/images/home/features/icons/heart.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
-                        <h2 class="icondesc">Improve<br>Heart<br>Health</h2>
-                </div>
-                </div>
-                <div class="layer" data-depth="0.60">
-                <div class="iconoverlay" id="benefiticon3">
-                        <img src="../../assets/images/home/features/icons/mood.svg" [ngsReveal]="{ reset: true, delay: 300 }"  class="benefiticon">
-                        <h2 class="icondesc">Enhance <br>Mood</h2>
-                </div>
-                </div>
-                <div class="layer" data-depth="0.70">
-                <div class="iconoverlay" id="benefiticon4">
-                        <img src="../../assets/images/home/features/icons/sexy.svg" [ngsReveal]="{ reset: true, delay: 100 }"  class="benefiticon">
-                        <h2 class="icondesc">Become <br> Sexy</h2>
-                </div>
-                </div>
-                <div class="layer" data-depth="0.50">
-                <div class="iconoverlay" id="benefiticon5">
-                        <img src="../../assets/images/home/features/icons/stress.svg" [ngsReveal]="{ reset: true, delay: 200 }"  class="benefiticon">
-                        <h2 class="icondesc">Reduce<br>Stress</h2>
-                </div>
-                </div>
-                <div class="layer" data-depth="0.20">
-                <div class="iconoverlay" id="benefiticon6">
-                        <img src="../../assets/images/home/features/icons/strong.svg" [ngsReveal]="{ reset: true, delay: 300 }"  class="benefiticon">
-                        <h2 class="icondesc">Become<br>Strong</h2>
-                </div>
-                </div>
-        </div>
-     </div>
-    </div>
 
 
     <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="footer" >
