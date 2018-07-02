@@ -137,40 +137,38 @@
 
     <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="features" >
         
-            <h1 class="adjustmenttext3"></h1>
-            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">WHAT </h1>
-            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story1">ALPHA</h1>
-            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story2">AESTHETICS</h1>
-            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">OFFERS TO YOU</h1>
+        <h1 class="adjustmenttext3"></h1>
+        <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">WHAT </h1>
+        <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story1">ALPHA</h1>
+        <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story2">AESTHETICS</h1>
+        <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">OFFERS TO YOU</h1>
 
         
         <div class="row">
+                
             <div class="col"></div>
              <div class="col-md-6">
             <!--Carousel Wrapper-->
-            <div class="laptop">
-            <mdb-carousel class="carousel slide" [isControls]="false" [animation]="'slide'" [interval]="1000" >
+            <div class="laptop" >
+            <mdb-carousel class="carousel slide" [isControls]="false" [animation]="'slide'" [interval]="4000" [noPause]="true" >
                     <!--First slide-->
                     <mdb-slide>
-                        <div class="view">
+                        <div class="view" mdbWavesEffect>
                             <img class="d-block w-100" src="../../assets/images/home/features/weight.jpg" alt="First slide">
-                            <div class="waves-light" mdbWavesEffect></div>
                         </div>
                     </mdb-slide>
                     <!--/First slide-->
                     <!--Second slide-->
                     <mdb-slide>
-                        <div class="view">
-                            <img class="d-block w-100" src="../../assets/images/home/features/weight.jpg" alt="Second slide">
-                            <div class="waves-light" mdbWavesEffect></div>
+                        <div class="view" mdbWavesEffect>
+                            <img class="d-block w-100" src="../../assets/images/home/features/workout.jpg" alt="Second slide">
                         </div>
                     </mdb-slide>
                     <!--/Second slide-->
                     <!--Third slide-->
                     <mdb-slide>
-                        <div class="view">
+                        <div class="view" mdbWavesEffect>
                             <img class="d-block w-100" src="../../assets/images/home/features/weight.jpg" alt="Third slide">
-                            <div class="waves-light" mdbWavesEffect></div>
                         </div>
                     </mdb-slide>
                     <!--/Third slide-->

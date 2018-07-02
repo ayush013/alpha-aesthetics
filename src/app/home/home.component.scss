@@ -595,3 +595,40 @@ div.storycard {
     background-size: cover;
     background-position: 50%;
 }
+
+
+
+.textwrapper {
+    width:100%;
+    height:800px;
+    background-size:cover;
+    padding-top:100px;
+  }
+  
+  .textBlock {
+    width:200px;
+    margin:0 auto;
+    &__static {
+      width:80px;
+      float:left;
+      padding-top:2px;
+  }
+  }
+  
+  .vs-wrapp {
+     // height: 53px;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      margin:0 auto;
+      width: 300px;
+  }
+    .vs {
+      height:10000px;
+    }
+  
+  .vsItem {
+        line-height:150%;
+        letter-spacing:5px;
+        opacity: 0.2;
+      }
+    

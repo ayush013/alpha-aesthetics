@@ -55,8 +55,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         autoScrolling:true,
         scrollBar: true,
-        scrollingSpeed: 300
+        scrollingSpeed: 300,
+        afterLoad: (origin, destination, direction) => {
+          console.log(destination.index)
+          
+        }
       });
+
+
     
     }
 
