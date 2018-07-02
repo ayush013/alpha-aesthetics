@@ -25,13 +25,34 @@
         <i class="fa fa-youtube"></i>
     </a>
   </li>
+  <ng-container *ngIf="home">
   <li class="nav-item" mdbWavesEffect>
-    <a class="nav-link" routerLink="/" routerLinkActive="navactive" [routerLinkActiveOptions]="{ exact:true }">Home</a>
+      <a class="nav-link" [ngClass]="{'homeactive': activelink == 0 }" (click)="MoveTo(1)" >Home</a>
   </li>
   <li class="nav-item" mdbWavesEffect>
-      <a class="nav-link" routerLink="/dashboard" routerLinkActive="navactive">Dashboard</a>
+      <a class="nav-link" [ngClass]="{'storyactive': activelink == 1 }" (click)="MoveTo(2)" >Story</a>
   </li>
   <li class="nav-item" mdbWavesEffect>
+      <a class="nav-link" [ngClass]="{'featuresactive': activelink == 2 }" (click)="MoveTo(3)" >Features</a>
+  </li>
+  <li class="nav-item" mdbWavesEffect>
+      <a class="nav-link" [ngClass]="{'benefitsactive': activelink == 3 }" (click)="MoveTo(4)" >Benefits</a>
+  </li>
+  <li class="nav-item" mdbWavesEffect>
+      <a class="nav-link" [ngClass]="{'dietactive': activelink == 4 }" (click)="MoveTo(5)" >Dieting</a>
+  </li>
+  <li class="nav-item" mdbWavesEffect>
+      <a class="nav-link" [ngClass]="{'homeactive': activelink == 5 }" (click)="MoveTo(6)" >Start Now</a>
+  </li>
+  </ng-container>
+  
+  <li class="nav-item" mdbWavesEffect *ngIf="!home">
+      <a class="nav-link" routerLink="/" routerLinkActive="navactive" [routerLinkActiveOptions]="{ exact:true }">Home</a>
+  </li>
+  <li class="nav-item" mdbWavesEffect>
+      <a class="nav-link" [ngClass]="{'border border-light rounded': home }" routerLink="/dashboard" routerLinkActive="navactive">Dashboard</a>
+  </li>
+  <li class="nav-item" mdbWavesEffect *ngIf="!home">
       <a class="nav-link border border-light rounded waves-effect"><i class="fa fa-sign-out"></i>LOGOUT</a>
   </li>
 </ul>

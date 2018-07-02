@@ -44,6 +44,7 @@ a.nav-link.border.border-light {
 
 .navbar .nav-item .nav-link {
     font-size: 0.9em;
+    text-transform: uppercase;
 }
 
 nav.home {
@@ -54,4 +55,34 @@ nav.home {
 
 .home a.nav-link {
     color: #000000;
+}
+
+.homeactive, .homeactive:hover {
+    color: white !important;
+    background-color: black !important; 
+    font-weight: 700;
+}
+
+.storyactive, .storyactive:hover {
+    color: white !important;
+    background-color:#ff4444 !important;  
+    font-weight: 700;
+}
+
+.featuresactive, .featuresactive:hover {
+    color: white !important;
+    background-color:#4285F4 !important; 
+    font-weight: 700;
+}
+
+.benefitsactive, .benefitsactive:hover {
+    color: white !important;
+    background-color:#ffbb33 !important;
+    font-weight: 700;
+}
+
+.dietactive, .dietactive:hover {
+    color: white !important;
+    background-color:#00C851 !important;
+    font-weight: 700;
 }

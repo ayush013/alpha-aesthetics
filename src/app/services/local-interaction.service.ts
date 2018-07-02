@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 export interface ProfileData {
   weight: number;
@@ -15,7 +15,12 @@ export interface ProfileData {
 
 export class LocalInteractionService {
 
-  constructor() { }
+  constructor() {
+   }
+
+  LinkChange = new Subject<any>();
+
+  MoveTo = new Subject<any>();
 
   insightdatamodel: Array<Object> = [{
     class: String,

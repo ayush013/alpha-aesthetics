@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import * as Parallax from 'parallax-js';
 import * as Typed from 'typed.js';
+import { LocalInteractionService } from '../services/local-interaction.service';
 
 declare var Parallax: any;
 declare var fullpage: any;
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.x.moveSectionDown();
   }
 
-  constructor(private route: ActivatedRoute, private titleService: Title) {}
+  constructor(private route: ActivatedRoute, private titleService: Title, private LocalInteractionService: LocalInteractionService) {}
 
   ngOnInit() {
     this.titleService.setTitle(this.route.snapshot.data['title']);
@@ -57,12 +58,15 @@ export class HomeComponent implements OnInit, OnDestroy {
         scrollBar: true,
         scrollingSpeed: 300,
         afterLoad: (origin, destination, direction) => {
-          console.log(destination.index)
-          
+          this.LocalInteractionService.LinkChange.next(destination.index); 
+           
         }
       });
 
-
+          
+      this.LocalInteractionService.MoveTo.subscribe( (value) => {
+        this.x.moveTo(value);
+      });
     
     }
 
