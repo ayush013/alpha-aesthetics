@@ -141,3 +141,8 @@ body {
 body.modal-open {
     overflow-x: hidden;
 }
+
+::selection {
+    color: rgb(255, 255, 255);
+    background: rgb(26, 26, 26);
+}

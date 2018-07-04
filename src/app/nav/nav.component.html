@@ -1,14 +1,14 @@
-<nav id="navbar" class="navbar navbar-expand-lg fixed-top home" [ngClass]="{'home': HomeActive }">
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top home" [ngClass]="{'navcolor': menu }">
   
   <a class="navbar-brand " mdbWavesEffect routerLink="./">
     <img src="../../assets/images/LOGO-horizontal.svg" style="height: 5vh;" type="image/svg+xml">
   </a>
 
-  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler ml-auto" type="button" (click)="ShowMenu()" >
+      <i class="fa fa-bars"></i>
 </button>  
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="navbarSupportedContent" [ngClass]="{'menuvisible': menu }">
 <ul class="navbar-nav ml-auto">
   <li class="nav-item" >
       <a href="https://www.facebook.com/alphaayush" class="nav-link " target="_blank">

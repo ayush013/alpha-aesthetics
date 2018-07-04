@@ -86,3 +86,21 @@ nav.home {
     background-color:#00C851 !important;
     font-weight: 700;
 }
+
+.navpadding {
+    padding-left: 3.5rem !important;
+    padding-right: 3.5rem !important;
+}
+
+.menuvisible {
+    display: block;
+}
+
+.collapse {
+    transition: 0.3s;
+}
+
+.navcolor {
+    background-color: white !important;
+    padding: 1vh 0 !important;
+}

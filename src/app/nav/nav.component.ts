@@ -14,8 +14,14 @@ export class NavComponent implements OnInit {
   activelink;
   home: boolean = true;
 
+  menu = false;
+
   MoveTo(value) {
     this.LocalInteractionService.MoveTo.next(value);
+  }
+
+  ShowMenu() {
+    this.menu = !this.menu;
   }
 
   constructor(private renderer: Renderer2, private router: Router, private LocalInteractionService: LocalInteractionService) {
@@ -24,11 +30,13 @@ export class NavComponent implements OnInit {
       if (event instanceof NavigationStart) {
         if (this.previousUrl) {
           this.renderer.addClass(document.getElementById('navbar'), 'home');
+          this.renderer.addClass(document.getElementById('navbar'), 'navpadding');
           this.home = true;
         }
         let currentUrlSlug = event.url.slice(1)
         if (currentUrlSlug) {
           this.renderer.removeClass(document.getElementById('navbar'), 'home');
+          this.renderer.removeClass(document.getElementById('navbar'), 'navpadding');
           this.home = false;
         }
         this.previousUrl = currentUrlSlug;
