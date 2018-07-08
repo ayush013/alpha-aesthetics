@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LocalInteractionService, ProfileData } from './local-interaction.service';
+import { LocalInteractionService, ProfileData, CalorieData } from './local-interaction.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +11,15 @@ export class CalorieCalculatorService {
 
   profiledata: ProfileData;
   googledata;
-  caloriedata = {};
+  caloriedata: CalorieData = {};
+
   goals = ['Lose 1 kg per week','Lose 0.5 kg per week','Lose 0.25 kg per week','Maintain Current Weight','Gain 0.25 kg per week','Gain 0.5 kg per week'];
 
   experience = [{name:'Beginner', desc:'Little to no experience in gym. Just started your fitness journey. 😊'},
   {name:'Intermediate', desc:'Been working out consistently for 1-3 years. Intermediate knowledge about health and fitness 💪'},
   {name:'Advanced', desc:'Been working out consistently for 3+ years. You know your shit! 🏋'}
   ];
+
   lifestyle = [{name:'Sedentary', desc:'Spend most of the day sitting (E.g. Desk Job, Developer 🤓)'},
   {name:'Lightly Active', desc:'Spend good part of the day on your feet (E.g. College Student )/ Exercise 2-3 times a week'},
   {name:'Active', desc:'Spend good part of the day doing physical activity / Exercise 5-6 times a week'},
@@ -264,6 +266,7 @@ Maintenance() {
 
   // RETURN DATA
   return this.caloriedata;
+
 }
 
 Bulking() {
@@ -304,8 +307,7 @@ Bulking() {
 
   // RETURN DATA
   return this.caloriedata;
+
 }
-
-
 
 }

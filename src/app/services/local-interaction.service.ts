@@ -12,6 +12,20 @@ export interface ProfileData {
   heightfeet?: number;
   heightinch?: number;
 }
+export interface CalorieData { 
+  name?: string,
+  experience?: string,
+  lifestyle?: string,
+  goal?: string,
+  bmr?: number,
+  maintenance?: number,
+  bulkingcal?: number,
+  fatlosscal?:number,
+  macroarray?: Array<Object>,
+  cardio?: number,
+  goalerrormsg?: string
+}
+
 
 export class LocalInteractionService {
 
@@ -62,7 +76,7 @@ workoutarray = [
     ]
   ],
     title: `Beginner's Workout`, 
-    features: ['Specially Focused on Beginners','Fundamentals of Weight Training','5 times Week','Build Strength/Muscle and Lose Fat'], 
+    features: ['Specially Focused on Beginners','Fundamentals of Weight Training','5 times a Week','Build Strength/Muscle and Lose Fat'], 
     description: `This workout program is specially crafted for people who are just beginning their journey. 
     Congratulations for taking your first step!
     This program will lay a foundation about basics of weight training.
@@ -73,30 +87,30 @@ workoutarray = [
   {
     route: 'fullbody',
     workout: [
-    [ {name: 'Push A'}, 
-    [{exercise:'Barbell Bench Press', sets:'3', reps: '8-12'}, {exercise:'Machine Chest Fly', sets:'3', reps: '10-12'}, {exercise:'Dumbbell Shoulder Press', sets:'3', reps: '8-12'}, {exercise:'Dumbbell Side Raise', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Tricep Extension', sets:'5', reps: '10-15'}]
-    ],
-    [ {name: 'Pull A + Obliques'}, 
-    [{exercise:'Barbell Deadlift', sets:'3', reps: '6-8'}, {exercise:'Single Arm Dumbbell Row', sets:'3', reps: '8-12'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Barbell Shrugs', sets:'3', reps: '10-15'}, {exercise:'Barbell Bicep Curl', sets:'5', reps: '10-15'}, {exercise:'Dumbbell Side Bend', sets:'4', reps: '10-15'}]
+    [ {name: 'Fullbody A'}, 
+    [{exercise:'Barbell Squat', sets:'3', reps: '8-12'}, {exercise:'Romanian Deadlift', sets:'3', reps: '8-12'}, {exercise:'Barbell Rows', sets:'3', reps: '8-12'}, {exercise:'Barbell Bench Press', sets:'3', reps: '8-12'}, {exercise:'Dumbell Side Raise', sets:'4', reps: '10-15'}, {exercise:'Plank', sets:'5', reps: '1-2 mins'}]
     ],
     [ {name: 'Rest Day'}, 
     [{exercise:'Rest Day'}]
     ],
-    [ {name: 'Push B'}, 
-    [{exercise:'Barbell Shoulder Press', sets:'3', reps: '8-10'}, {exercise:'Incline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Decline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Cable Tricep Pushdown', sets:'3', reps: '10-15'}, {exercise:'Dumbbell Skullcrusher', sets:'3', reps: '10-15'}]
+    [ {name: 'Fullbody B'}, 
+    [{exercise:'Overhead Shoulder Press', sets:'3', reps: '8-12'}, {exercise:'Incline Dumbbell Press', sets:'3', reps: '8-12'}, {exercise:'Pullups/Chin Ups', sets:'3', reps: '8-12'}, {exercise:'Barbell Shrugs', sets:'3', reps: '10-15'}, {exercise:'Barbell Bicep Curl', sets:'5', reps: '10-15'}, {exercise:'Close Grip Bench Press', sets:'5', reps: '10-15'}]
     ],
-    [ {name: 'Pull B'}, 
-    [{exercise:'Pullups', sets:'3', reps: '8-10'}, {exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Cable Face Pulls', sets:'3', reps: '8-12'}, {exercise:'Preacher Curl', sets:'3', reps: '10-15'}, {exercise:'Reverse Cable Curl', sets:'3', reps: '10-15'}]
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
     ],
-    [ {name: 'Legs and Abs'}, 
-    [{exercise:'Barbell Squat', sets:'3', reps: '8-10'}, {exercise:'Machine Leg Press', sets:'3', reps: '8-12'}, {exercise:'Romanian Deadlift', sets:'3', reps: '8-12'}, {exercise:'Machine Leg Curl', sets:'3', reps: '8-12'}, {exercise:'Machine Calf Press', sets:'5', reps: '10-15'}, {exercise:'Cable Crunch', sets:'4', reps: '10-15'}]
+    [ {name: 'Fullbody C'}, 
+    [{exercise:'Machine Lat Pulldown', sets:'3', reps: '8-12'}, {exercise:'Sumo Deadlift', sets:'3', reps: '8-12'}, {exercise:'Pause Barbell Squat', sets:'3', reps: '8-12'}, {exercise:'Machine Flys', sets:'3', reps: '8-12'}, {exercise:'Incline Dumbbell Curl', sets:'5', reps: '8-12'}, {exercise:'Lying Skullcrusher', sets:'5', reps: '8-12'}]
+    ],
+    [ {name: 'Rest Day'}, 
+    [{exercise:'Rest Day'}]
     ],
     [ {name: 'Rest Day'}, 
     [{exercise:'Rest Day'}]
     ]
   ],
     title: `Full Body Workout`, 
-    features: ['Specially Focused on Beginners','Fundamentals of Weight Training','5 times Week','Build Strength/Muscle and Lose Fat'], 
+    features: ['For People with Busy Lifestyle','Only 3 times a week','Compound Lift oriented','Flexible for convenience'], 
     description: `This workout program is specially crafted for people who are just beginning their journey. 
     Congratulations for taking your first step!
     This program will lay a foundation about basics of weight training.
