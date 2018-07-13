@@ -5,5 +5,8 @@ module.exports = {
     },
     mongoDB: {
         dbURL: 'mongodb://localhost:27017/authtest'
+    },
+    session: {
+        cookieKey: 'alphaaestheticsindia'
     }
 }
