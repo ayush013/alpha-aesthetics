@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
-import {NgsRevealModule} from 'ng-scrollreveal';
+import { NgsRevealModule } from 'ng-scrollreveal';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -68,6 +69,7 @@ import { MaintainComponent } from './dashboard/calorie-calc/maintain/maintain.co
     MDBBootstrapModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
+    HttpModule,
     ReactiveFormsModule,
     NgsRevealModule.forRoot()
   ],

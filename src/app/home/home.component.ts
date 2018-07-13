@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import * as Parallax from 'parallax-js';
 import * as Typed from 'typed.js';
 import { LocalInteractionService } from '../services/local-interaction.service';
+import { ServerInteractionService } from '../services/server-interaction.service';
 
 declare var Parallax: any;
 declare var fullpage: any;
@@ -21,7 +22,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.x.moveSectionDown();
   }
 
-  constructor(private route: ActivatedRoute, private titleService: Title, private LocalInteractionService: LocalInteractionService) {}
+  constructor(private route: ActivatedRoute, 
+    private titleService: Title, 
+    private LocalInteractionService: LocalInteractionService,
+    private ServerInteractionService: ServerInteractionService) {}
 
   ngOnInit() {
     this.titleService.setTitle(this.route.snapshot.data['title']);
