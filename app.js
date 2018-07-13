@@ -1,7 +1,9 @@
 const express = require('express');
 const path = require('path');
 const authRoutes = require('./routes/auth-routes');
+const dashboardRoutes = require('./routes/dashboard');
 const passportSetup = require('./config/passport-setup');
+const passportfbSetup = require('./config/passport-setup-fb');
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
@@ -42,6 +44,7 @@ app.use(passport.session());
 
 // OAUTH ROUTES BRUH
 app.use('/auth', authRoutes);
+app.use('/#/dashboard', dashboardRoutes);
 
 // CONNECT TO DB BRAH
 mongoose.connect(keys.mongoDB.dbURL, () => {
