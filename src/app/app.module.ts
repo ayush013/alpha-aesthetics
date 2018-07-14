@@ -27,7 +27,6 @@ import { WorkoutTableComponent } from './dashboard/workout/workout-table/workout
 import { InsightcardComponent } from './dashboard/dhome/insightcard/insightcard.component';
 import { BlogArticleComponent } from './dashboard/blog/blog-article/blog-article.component';
 import { AuthGuard } from './services/auth-guard.service';
-import { AuthService } from './services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CaloriecardComponent } from './dashboard/calorie-calc/caloriecard/caloriecard.component';
 import { LocalInteractionService } from './services/local-interaction.service';
@@ -73,7 +72,7 @@ import { MaintainComponent } from './dashboard/calorie-calc/maintain/maintain.co
     ReactiveFormsModule,
     NgsRevealModule.forRoot()
   ],
-  providers: [AuthService, AuthGuard, LocalInteractionService, CalorieCalculatorService, ServerInteractionService],
+  providers: [AuthGuard, LocalInteractionService, CalorieCalculatorService, ServerInteractionService],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

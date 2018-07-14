@@ -10,8 +10,8 @@ export class ServerInteractionService {
 
   apiurl = 'http://localhost:3000'
 
-  googleLogin() {
-    return this.http.get(`${this.apiurl}/auth/google`)
+  isAuthenticated() {
+    return this.http.get(`${this.apiurl}/api/authguard`);
   }
-  
+
 }
