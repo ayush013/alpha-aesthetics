@@ -4,20 +4,21 @@ const keys = require('./keys');
 const ProfileData = require('../models/profile-data')
 
 
-passport.serializeUser((Profile, done) => {
-    done(null, Profile.id);
+passport.serializeUser((user, done) => {
+    done(null, user.id);
 });
+  
 
 passport.deserializeUser((id, done) => {
-    ProfileData.findById(id)
-    .then((Profile) => {
-        done(null, Profile);
-    });
+ProfileData.findById(id, (err, user) => {
+    done(err, user);
 });
+});
+
 
 passport.use(
     new GoogleStrategy({
-        callbackURL: '/auth/google/redirect',
+        callbackURL: '/api/auth/google/redirect',
         clientID: keys.google.clientID,
         clientSecret: keys.google.clientSecret
 }, (accesstoken, refreshtoken, profile, done) => {

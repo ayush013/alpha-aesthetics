@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const authRoutes = require('./routes/auth-routes');
 const dashboardRoutes = require('./routes/dashboard');
+const authGuardRoute = require('./routes/auth-guard');
 const passportgoogleSetup = require('./config/passport-setup-google');
 const passportfacebookSetup = require('./config/passport-setup-facebook');
 const mongoose = require('mongoose');
@@ -43,7 +44,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // OAUTH ROUTES BRUH
-app.use('/auth', authRoutes);
+app.use('/api/authguard', authGuardRoute);
+app.use('/api/auth', authRoutes);
 app.use('/#/dashboard', dashboardRoutes);
 
 // CONNECT TO DB BRAH
@@ -55,12 +57,10 @@ mongoose.connect(keys.mongoDB.dbURL, () => {
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
-
 // HOMEPAGE STUFF 
 app.get('/', function (req, res, next) {
     res.render('index');
 });
-
 
 // PORT NUMBER FOR LISTENING
 app.listen(3000, () => {

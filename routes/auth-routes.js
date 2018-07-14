@@ -6,23 +6,20 @@ router.get('/google', passport.authenticate('google', {
 })
 );
 
-router.get('/facebook', passport.authenticate('facebook', {
-    scope: ['email','user_gender'] 
-})
+router.get('/facebook', passport.authenticate('facebook', 
+    { authType: 'rerequest', scope: ['email','user_gender'] })
 );
 
 router.get('/logout', (req, res) => {
     req.logout();
-    res.redirect('/');
+    res.send({ loggedout: true})
 });
 
 router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
-    console.log(`PROFILE : ${req.user}`)
     res.redirect('/#/dashboard');
 });
 
 router.get('/facebook/redirect', passport.authenticate('facebook'), (req, res) => {
-    console.log(`PROFILE : ${req}`)
     res.redirect('/#/dashboard');
 });
 

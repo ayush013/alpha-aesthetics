@@ -3,25 +3,27 @@ const FacebookStrategy = require('passport-facebook')
 const keys = require('./keys');
 const ProfileData = require('../models/profile-data')
 
-
-passport.serializeUser((Profile, done) => {
-    done(null, Profile.id);
+passport.serializeUser((user, done) => {
+    done(null, user.id);
 });
+  
 
 passport.deserializeUser((id, done) => {
-    ProfileData.findById(id)
-    .then((Profile) => {
-        done(null, Profile);
-    });
+ProfileData.findById(id, (err, user) => {
+    done(err, user);
+});
 });
 
 passport.use(
     new FacebookStrategy({
         clientID: keys.facebook.FACEBOOK_APP_ID,
         clientSecret: keys.facebook.FACEBOOK_APP_SECRET,
-        callbackURL: "/auth/facebook/redirect",
+        callbackURL: "/api/auth/facebook/redirect",
         profileFields: ['id', 'first_name', 'last_name', 'picture', 'email', 'gender']
     }, (accessToken, refreshToken, profile, cb) => {
+
+        console.log(`accesstoken : ${accessToken}`)
+        console.log(`REFRESHtoken : ${refreshToken}`)
         
         ProfileData.findOne({ email: profile.emails[0].value })
         .then((Profile) => {
