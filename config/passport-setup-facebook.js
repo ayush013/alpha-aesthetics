@@ -6,12 +6,11 @@ const ProfileData = require('../models/profile-data')
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
-  
 
 passport.deserializeUser((id, done) => {
-ProfileData.findById(id, (err, user) => {
-    done(err, user);
-});
+    ProfileData.findById(id).then((Profile) => {
+        done(null, Profile);
+   });
 });
 
 passport.use(
@@ -19,11 +18,8 @@ passport.use(
         clientID: keys.facebook.FACEBOOK_APP_ID,
         clientSecret: keys.facebook.FACEBOOK_APP_SECRET,
         callbackURL: "/api/auth/facebook/redirect",
-        profileFields: ['id', 'first_name', 'last_name', 'picture', 'email', 'gender']
+        profileFields: ['id', 'first_name', 'last_name', 'picture.type(large)', 'email', 'gender']
     }, (accessToken, refreshToken, profile, cb) => {
-
-        console.log(`accesstoken : ${accessToken}`)
-        console.log(`REFRESHtoken : ${refreshToken}`)
         
         ProfileData.findOne({ email: profile.emails[0].value })
         .then((Profile) => {

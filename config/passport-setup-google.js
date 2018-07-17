@@ -10,9 +10,9 @@ passport.serializeUser((user, done) => {
   
 
 passport.deserializeUser((id, done) => {
-ProfileData.findById(id, (err, user) => {
-    done(err, user);
-});
+    ProfileData.findById(id).then((Profile) => {
+        done(null, Profile);
+   });
 });
 
 
