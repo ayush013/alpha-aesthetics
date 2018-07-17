@@ -1,6 +1,7 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { LocalInteractionService } from '../services/local-interaction.service';
+import { ServerInteractionService } from '../services/server-interaction.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,6 +16,8 @@ export class NavComponent implements OnInit {
   home: boolean = true;
 
   menu = false;
+  
+  loggedIn = false;
 
   MoveTo(value) {
     this.LocalInteractionService.MoveTo.next(value);
@@ -24,7 +27,10 @@ export class NavComponent implements OnInit {
     this.menu = !this.menu;
   }
 
-  constructor(private renderer: Renderer2, private router: Router, private LocalInteractionService: LocalInteractionService) {
+  constructor(private renderer: Renderer2, 
+    private router: Router, 
+    private LocalInteractionService: LocalInteractionService,
+    private ServerInteractionService: ServerInteractionService) {
     this.router.events
     .subscribe((event) => {
       if (event instanceof NavigationStart) {
@@ -49,6 +55,12 @@ export class NavComponent implements OnInit {
       this.activelink = value;
       console.log(this.activelink)
      });
+
+     
+    this.ServerInteractionService.LoginStatus
+    .subscribe( loginstatus => {this.loggedIn = loginstatus;
+      console.log(loginstatus);
+    });
   }
 
 }
