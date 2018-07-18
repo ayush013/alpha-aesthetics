@@ -44,7 +44,7 @@
         <h1 id="landingtitle1" class="item">ALPHA</h1>
         <h1 id="landingtitle2" class="item">AESTHETICS</h1>
         <h1 id="landingquotes" class="item"></h1>
-        <a (click)="login.show()" mdbWavesEffect class="loginbtn item" id="loginbtn">
+        <a (click)="login.show()" mdbWavesEffect class="loginbtn item" id="loginbtn" *ngIf="!loggedIn">
             GET STARTED
         <span class="border-left"></span>
         <span class="border-top"></span>
@@ -52,8 +52,14 @@
         <span class="border-right"></span>
         </a>
 
+        <a routerLink="/dashboard" mdbWavesEffect class="loginbtn item" id="loginbtn" *ngIf="loggedIn">
+                DASHBOARD
+            <span class="border-left"></span>
+            <span class="border-top"></span>
+            <span class="border-bottom"></span>
+            <span class="border-right"></span>
+        </a>    
 
-        
         <span class="scroll-btn">
             <a (click)="MoveDown()">
             <span class="mouse">

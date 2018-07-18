@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   x: any;
 
+  loggedIn = false;
+
   MoveDown() {
     this.x.moveSectionDown();
   }
@@ -70,6 +72,11 @@ export class HomeComponent implements OnInit, OnDestroy {
           
       this.LocalInteractionService.MoveTo.subscribe( (value) => {
         this.x.moveTo(value);
+      });
+
+      this.ServerInteractionService.LoginStatus
+      .subscribe( loginstatus => {this.loggedIn = loginstatus;
+        console.log(loginstatus);
       });
     
     }
