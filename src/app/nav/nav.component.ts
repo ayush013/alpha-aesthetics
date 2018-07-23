@@ -27,6 +27,21 @@ export class NavComponent implements OnInit {
     this.menu = !this.menu;
   }
 
+  LogOut() {
+    this.ServerInteractionService.LogOut()
+    .subscribe(
+      (response) => { console.log(response)
+      if(response.status === 205)
+        {
+          this.ServerInteractionService.loggedIn = false;
+          this.router.navigate(['/']);
+
+        }
+      },
+      (error) => console.log(error)
+    )
+  }
+
   constructor(private renderer: Renderer2, 
     private router: Router, 
     private LocalInteractionService: LocalInteractionService,
@@ -61,6 +76,7 @@ export class NavComponent implements OnInit {
     .subscribe( loginstatus => {this.loggedIn = loginstatus;
       console.log(loginstatus);
     });
+    
   }
 
 }

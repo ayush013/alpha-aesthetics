@@ -8,8 +8,6 @@ import { ServerInteractionService } from './server-interaction.service';
 export class AuthGuard implements CanActivate, CanActivateChild {
   constructor(private ServerInteractionService: ServerInteractionService, private router: Router) {}
 
-  loggedIn = false;
-
   canActivate(route: ActivatedRouteSnapshot,
               state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 

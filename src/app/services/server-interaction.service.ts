@@ -38,4 +38,8 @@ export class ServerInteractionService {
     return promise;
   }
 
+  LogOut() {
+     return this.http.get(`${this.apiurl}/api/auth/logout`)
+  }
+
 }
