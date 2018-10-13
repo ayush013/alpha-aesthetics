@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import * as Parallax from 'parallax-js';
-import * as Typed from 'typed.js';
+import Typed from 'typed.js';
 import { LocalInteractionService } from '../services/local-interaction.service';
 import { ServerInteractionService } from '../services/server-interaction.service';
 

@@ -28,6 +28,7 @@ export class ServerInteractionService {
               resolve(this.loggedIn);
             }
             else {
+              this.loggedIn = false;
               reject();
             }
           },
