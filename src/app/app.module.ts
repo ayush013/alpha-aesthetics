@@ -35,6 +35,8 @@ import { ServerInteractionService } from './services/server-interaction.service'
 import { FatlossComponent } from './dashboard/calorie-calc/fatloss/fatloss.component';
 import { BulkingComponent } from './dashboard/calorie-calc/bulking/bulking.component';
 import { MaintainComponent } from './dashboard/calorie-calc/maintain/maintain.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,8 @@ import { MaintainComponent } from './dashboard/calorie-calc/maintain/maintain.co
     AppRoutingModule,
     HttpModule,
     ReactiveFormsModule,
-    NgsRevealModule.forRoot()
+    NgsRevealModule.forRoot(),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthGuard, LocalInteractionService, CalorieCalculatorService, ServerInteractionService],
   bootstrap: [AppComponent],
