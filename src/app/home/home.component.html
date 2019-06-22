@@ -365,6 +365,48 @@
 
 
     <div class="container-fluid section" [ngsReveal]="{ reset: true }" id="footer" >
+
+            <h1 class="adjustmenttext3"></h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">PERSONAL </h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story1">TRAINING</h1>
+            <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">PLANS</h1>
+
+            <div class="card-deck" id="trainingcards">
+                
+                <!-- Card -->
+                <div class="card card-image mb-3" [ngsReveal]="{ reset: true, delay: 200 }" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                    <div>
+                        <h3 class="card-title pt-2"><strong>This is card title</strong></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
+                        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
+                        Odit sed qui, dolorum!.</p>
+                        <a mdbBtn color="pink" class="waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> View project</a>
+                    </div>
+                    </div>
+                    <!-- Content -->
+                </div>
+                <!-- Card -->
+
+                <!-- Card -->
+                <div class="card card-image mb-3" [ngsReveal]="{ reset: true, delay: 200 }" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
+
+                    <!-- Content -->
+                    <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                    <div>
+                        <h3 class="card-title pt-2"><strong>This is card title</strong></h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
+                        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
+                        Odit sed qui, dolorum!.</p>
+                        <a mdbBtn color="pink" class="waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> View project</a>
+                    </div>
+                    </div>
+                    <!-- Content -->
+                </div>
+                <!-- Card -->
+        </div>
             <img src="../../assets/images/home/footer.svg" id="footersvg">
             
             <div id="footerbottom" >
@@ -425,7 +467,7 @@
             <!--Header-->
             <div class="modal-header elegant-color white-text waves-light" mdbWavesEffect>
                 <h4 class="title">Privacy</h4>
-                <button type="button" class="close white-text waves-light" data-dismiss="modal" aria-label="Close" (click)="tnc.hide()">
+                <button type="button" class="close white-text waves-light" data-dismiss="modal" aria-label="Close" (click)="privacy.hide()">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
@@ -493,7 +535,7 @@
                     <!--Header-->
                     <div class="modal-header elegant-color white-text waves-light" mdbWavesEffect>
                         <h4 class="title">Disclaimer</h4>
-                        <button type="button" class="close white-text waves-light" data-dismiss="modal" aria-label="Close" (click)="tnc.hide()">
+                        <button type="button" class="close white-text waves-light" data-dismiss="modal" aria-label="Close" (click)="disclaimer.hide()">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>

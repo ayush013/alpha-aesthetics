@@ -19,7 +19,7 @@
     "@angular/http": "^7.1.1",
     "@angular/platform-browser": "^7.1.1",
     "@angular/platform-browser-dynamic": "^7.1.1",
-    "@angular/pwa": "^0.8.8",
+    "@angular/pwa": "^0.800.3",
     "@angular/router": "^7.1.1",
     "@angular/service-worker": "^7.1.1",
     "angular-bootstrap-md": "^7.0.0",
@@ -29,7 +29,7 @@
     "express": "^4.16.4",
     "font-awesome": "^4.7.0",
     "fullpage.js": "^3.0.3",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "jquery-scrollify": "^1.0.19",
     "ng-scrollreveal": "^2.2.0",
     "ngx-fullpage": "^4.0.6",
@@ -44,7 +44,7 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.8.8",
+    "@angular-devkit/build-angular": "^0.800.3",
     "@angular/cli": "~7.1.0",
     "@angular/compiler-cli": "^7.1.1",
     "@angular/language-service": "^7.1.1",
