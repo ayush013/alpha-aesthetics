@@ -1,7 +1,7 @@
 const passport = require('passport');
-const FacebookStrategy = require('passport-facebook')
+const FacebookStrategy = require('passport-facebook');
 const keys = require('./keys');
-const ProfileData = require('../models/profile-data')
+const ProfileData = require('../models/profile-data');
 
 passport.serializeUser((user, done) => {
     done(null, user.id);
@@ -10,7 +10,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser((id, done) => {
     ProfileData.findById(id).then((Profile) => {
         done(null, Profile);
-   });
+    });
 });
 
 passport.use(
@@ -45,7 +45,7 @@ passport.use(
                 return cb(null, Profile);
             }
         }
-            // NEW USER :)
+        // NEW USER :)
             else {
                 new ProfileData({
                     facebookID: profile.id,
@@ -61,9 +61,7 @@ passport.use(
                     return cb(null, Profile);
                 })
                 .catch((error) => console.log(error));
-    
             }
-    
         }).catch((error) => console.log(error));
 
 })

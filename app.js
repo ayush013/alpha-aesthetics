@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
 const authRoutes = require('./routes/auth-routes');
 const dashboardRoutes = require('./routes/dashboard');
@@ -15,29 +16,22 @@ var favicon = require('serve-favicon');
 // EXPRESS INITIALIZATION
 const app = express();
 
-// CORS BABY
+// HELMET 
+app.use(helmet());
 
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, PATCH, DELETE, OPTIONS');
-    next();
-});
+// BODYPARSER
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
+// FAVICON + PUBLIC DIR
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(express.static('public'));
 
 // COOKIEEEEE <3
 app.use(cookieSession({
     maxAge: 24*60*60*1000,
     keys: [keys.session.cookieKey]
 }));
-
-// BODYPARSER
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-
-
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(express.static(path.join(__dirname, 'public')));
 
 // PASSPORT INITIALIZATION 
 app.use(passport.initialize());

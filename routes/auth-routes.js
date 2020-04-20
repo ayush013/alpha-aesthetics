@@ -2,13 +2,11 @@ const router = require('express').Router();
 const passport = require('passport');
 
 router.get('/google', passport.authenticate('google', { 
-    display: 'popup',
     scope: ['profile','email']
 })
 );
 
-router.get('/facebook', passport.authenticate('facebook', { 
-    display: 'popup', 
+router.get('/facebook', passport.authenticate('facebook', {  
     scope: ['email','user_gender'] })
 );
 
