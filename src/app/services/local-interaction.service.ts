@@ -170,11 +170,11 @@ calarray = [
   CalObservable = this.calArray.asObservable();
 
   googledata = {
-    fname: 'Ayush',
-    lname: 'Singh',
+    fname: 'User',
+    lname: 'Name',
     gender: 'male',
     imgsrc: '../../assets/images/dp.jpg',
-    email: 'ayush.singh.xda@gmail.com'
+    email: 'test@gmail.com'
   };
 
   private googleObject = new BehaviorSubject(this.googledata);

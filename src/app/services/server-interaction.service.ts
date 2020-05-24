@@ -11,31 +11,28 @@ export class ServerInteractionService {
 
   apiurl = 'http://localhost:3000'
 
-  loggedIn = false;
+  loggedIn = true;
 
   LoginStatus = new Subject<any>();
 
   isAuthenticated() {
     const promise = new Promise(
       (resolve, reject) => {
-        this.http.get(`${this.apiurl}/api/authguard`)
-        .subscribe(
-          (response) => { console.log(response)
-          if(response.status === 200)
-            { 
-              this.loggedIn = true;
-              this.LoginStatus.next(this.loggedIn)
+        // this.http.get(`${this.apiurl}/api/authguard`)
+        // .subscribe(
+        //   (response) => { console.log(response)
+        //   if(response.status === 200)
+        //     { 
+        //       this.loggedIn = true;
+        //       this.LoginStatus.next(this.loggedIn)
               resolve(this.loggedIn);
-            }
-            else {
-              this.loggedIn = false;
-              reject();
-            }
+            // }
+            // else {
+            //   this.loggedIn = false;
+            //   reject();
+            // }
           },
-          (error) => console.log(error)
         )
-      }
-    );
     return promise;
   }
 

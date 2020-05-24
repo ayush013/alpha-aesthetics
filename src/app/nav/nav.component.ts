@@ -17,7 +17,7 @@ export class NavComponent implements OnInit {
 
   menu = false;
   
-  loggedIn = false;
+  loggedIn = true;
 
   MoveTo(value) {
     this.LocalInteractionService.MoveTo.next(value);

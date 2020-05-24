@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocalInteractionService } from '../../services/local-interaction.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import * as $ from 'jquery';
@@ -12,7 +12,7 @@ import * as $ from 'jquery';
 })
 export class ProfileComponent implements OnInit, AfterViewInit {
 
-  constructor(private route: ActivatedRoute, private titleService: Title, private LocalInteractionService: LocalInteractionService) {}
+  constructor(private route: ActivatedRoute, private router: Router, private titleService: Title, private LocalInteractionService: LocalInteractionService) {}
 
   googledata;
 
@@ -34,6 +34,7 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   SaveProfile() {
     console.log(this.ProfileFormData.value);
     this.LocalInteractionService.SetProfile(this.ProfileFormData.value);
+    this.router.navigate(['dashboard/calculator'])
   }
 
   ConvertWeight(unit) {

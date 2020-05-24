@@ -44,7 +44,7 @@
         <h1 id="landingtitle1" class="item">ALPHA</h1>
         <h1 id="landingtitle2" class="item">AESTHETICS</h1>
         <h1 id="landingquotes" class="item"></h1>
-        <a (click)="login.show()" mdbWavesEffect class="loginbtn item" id="loginbtn" *ngIf="!loggedIn">
+        <a routerLink="/dashboard" mdbWavesEffect class="loginbtn item" id="loginbtn" *ngIf="!loggedIn">
             GET STARTED
         <span class="border-left"></span>
         <span class="border-top"></span>
@@ -371,42 +371,7 @@
             <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="story1">TRAINING</h1>
             <h1 class="diettitle" [ngsReveal]="{ reset: true, delay: 200 }" id="diet4">PLANS</h1>
 
-            <div class="card-deck" id="trainingcards">
-                
-                <!-- Card -->
-                <div class="card card-image mb-3" [ngsReveal]="{ reset: true, delay: 200 }" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
 
-                    <!-- Content -->
-                    <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div>
-                        <h3 class="card-title pt-2"><strong>This is card title</strong></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                        Odit sed qui, dolorum!.</p>
-                        <a mdbBtn color="pink" class="waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> View project</a>
-                    </div>
-                    </div>
-                    <!-- Content -->
-                </div>
-                <!-- Card -->
-
-                <!-- Card -->
-                <div class="card card-image mb-3" [ngsReveal]="{ reset: true, delay: 200 }" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg);">
-
-                    <!-- Content -->
-                    <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-                    <div>
-                        <h3 class="card-title pt-2"><strong>This is card title</strong></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat fugiat, laboriosam, voluptatem,
-                        optio vero odio nam sit officia accusamus minus error nisi architecto nulla ipsum dignissimos.
-                        Odit sed qui, dolorum!.</p>
-                        <a mdbBtn color="pink" class="waves-light" mdbWavesEffect><i class="fa fa-clone left"></i> View project</a>
-                    </div>
-                    </div>
-                    <!-- Content -->
-                </div>
-                <!-- Card -->
-        </div>
             <img src="../../assets/images/home/footer.svg" id="footersvg">
             
             <div id="footerbottom" >

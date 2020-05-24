@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   loggedIn = false;
 
-  MoveDown() {
-    this.x.moveSectionDown();
-  }
+  // MoveDown() {
+  //   this.x.moveSectionDown();
+  // }
 
   constructor(private route: ActivatedRoute, 
     private titleService: Title, 
@@ -58,21 +58,21 @@ export class HomeComponent implements OnInit, OnDestroy {
       loop: true,
       showCursor: false
   });
-   this.x = new fullpage('#fullpage', {
-      licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        autoScrolling:true,
-        scrollBar: true,
-        scrollingSpeed: 300,
-        afterLoad: (origin, destination, direction) => {
-          this.LocalInteractionService.LinkChange.next(destination.index); 
+  //  this.x = new fullpage('#fullpage', {
+  //     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+  //       autoScrolling:true,
+  //       scrollBar: true,
+  //       scrollingSpeed: 300,
+  //       afterLoad: (origin, destination, direction) => {
+  //         this.LocalInteractionService.LinkChange.next(destination.index); 
            
-        }
-      });
+  //       }
+  //     });
 
           
-      this.LocalInteractionService.MoveTo.subscribe( (value) => {
-        this.x.moveTo(value);
-      });
+  //     this.LocalInteractionService.MoveTo.subscribe( (value) => {
+  //       this.x.moveTo(value);
+  //     });
 
       this.ServerInteractionService.LoginStatus
       .subscribe( loginstatus => {this.loggedIn = loginstatus;
@@ -82,6 +82,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
   ngOnDestroy() {
-    this.x.destroy();
+    // this.x.destroy();
   }
 }

@@ -4,6 +4,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppRoutingModule } from './app-routing.module';
 import { NgsRevealModule } from 'ng-scrollreveal';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -73,7 +74,8 @@ import { environment } from '../environments/environment';
     HttpModule,
     ReactiveFormsModule,
     NgsRevealModule.forRoot(),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule
   ],
   providers: [AuthGuard, LocalInteractionService, CalorieCalculatorService, ServerInteractionService],
   bootstrap: [AppComponent],

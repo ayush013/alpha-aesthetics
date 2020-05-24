@@ -12,5 +12,5 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
   }
 
-  name: String = 'Ayush';
+  name: String = 'User';
 }

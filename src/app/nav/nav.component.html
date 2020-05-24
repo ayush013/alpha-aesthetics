@@ -25,7 +25,7 @@
         <i class="fa fa-youtube"></i>
     </a>
   </li>
-  <ng-container *ngIf="home">
+  <!-- <ng-container *ngIf="home">
   <li class="nav-item" mdbWavesEffect>
       <a class="nav-link" [ngClass]="{'homeactive': activelink == 0 }" (click)="MoveTo(1)" >Home</a>
   </li>
@@ -44,7 +44,7 @@
   <li class="nav-item" mdbWavesEffect>
       <a class="nav-link" [ngClass]="{'homeactive': activelink == 5 }" (click)="MoveTo(6)" >Training</a>
   </li>
-  </ng-container>
+  </ng-container> -->
   
   <li class="nav-item" mdbWavesEffect *ngIf="!home">
       <a class="nav-link" routerLink="/" routerLinkActive="navactive" [routerLinkActiveOptions]="{ exact:true }">Home</a>
