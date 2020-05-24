@@ -28,18 +28,19 @@ export class NavComponent implements OnInit {
   }
 
   LogOut() {
-    this.ServerInteractionService.LogOut()
-    .subscribe(
-      (response) => { console.log(response)
-      if(response.status === 205)
-        {
-          this.ServerInteractionService.loggedIn = false;
-          this.router.navigate(['/']);
+    this.router.navigate(['/'])
+    // this.ServerInteractionService.LogOut()
+    // .subscribe(
+    //   (response) => { console.log(response)
+    //   if(response.status === 205)
+    //     {
+    //       this.ServerInteractionService.loggedIn = false;
+    //       this.router.navigate(['/']);
 
-        }
-      },
-      (error) => console.log(error)
-    )
+    //     }
+    //   },
+    //   (error) => console.log(error)
+    // )
   }
 
   constructor(private renderer: Renderer2, 
